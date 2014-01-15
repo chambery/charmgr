@@ -1,6 +1,5 @@
 library common;
 
-import 'armor.dart';
 import 'resource.dart';
 import 'dart:math';
 

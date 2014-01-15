@@ -1,0 +1,309 @@
+- name: Erastil
+  alignment: Lawful
+  goodness: Good
+  portfolios:
+      - farming
+      - hunting
+      - trade
+      - family
+  domains:
+      - Animal
+      - Community
+      - Good
+      - Law
+      - Plant
+  weapon: Longbow
+
+- name: Iomedae
+  alignment: Lawful
+  goodness: Good
+  portfolios:
+      - valor
+      - rulership
+      - justice
+      - honor
+  domains:
+      - Glory
+      - Good
+      - Law
+      - Sun
+      - War
+  weapon: Longsword
+
+- name: Torag
+  alignment: Lawful
+  goodness: Good
+  portfolios:
+    - forge
+    - protection
+    - strategy
+  domains:
+    - Artifice
+    - Earth
+    - Good
+    - Law
+    - Protection
+  weapon: Warhammer
+
+- name: Sarenrae
+  alignment: Neutral
+  goodness: Good
+  portfolios:
+    - sun
+    - redemption
+    - honesty
+    - healing
+  domains:
+    - Fire
+    - Glory
+    - Good
+    - Healing
+    - Sun
+  weapon: Scimitar
+
+- name: Shelyn
+  alignment: Neutral
+  goodness: Good
+  portfolios:
+    - beauty
+    - art
+    - love
+    - music
+  domains:
+    - Air
+    - Charm
+    - Good
+    - Luck
+    - Protection
+  weapon: Glaive
+
+- name: Desna
+  alignment: Chaotic
+  goodness: Good
+  portfolios:
+    - dreams
+    - stars
+    - travelers
+    - luck
+  domains:
+    - Chaos
+    - Good
+    - Liberation
+    - Luck
+    - Travel
+  weapon: Starknife
+
+- name: Cayden Cailean
+  alignment: Chaotic
+  goodness: Good
+  portfolios:
+    - freedom
+    - ale
+    - wine
+    - bravery
+  domains:
+    - Chaos
+    - Charm
+    - Good
+    - Strength
+    - Travel
+  weapon: Rapier
+
+- name: Abadar
+  alignment: Lawful
+  goodness: Neutral
+  portfolios:
+    - cities
+    - wealth
+    - merchants
+    - law
+  domains:
+    - Earth
+    - Law
+    - Nobility
+    - Protection
+    - Travel
+  weapon: Light Crossbow
+
+- name: Irori
+  alignment: Lawful
+  goodness: Neutral
+  portfolios:
+    - history
+    - knowledge
+    - self-perfection
+  domains:
+    - Healing
+    - Knowledge
+    - Law
+    - Rune
+    - Strength
+  weapon: Unarmed Strike
+
+- name: Gozreh
+  alignment: Neutral
+  goodness: Neutral
+  portfolios:
+    - nature
+    - weather
+    - the sea
+  domains:
+    - Air
+    - Animal
+    - Plant
+    - Water
+    - Weather
+  weapon: Trident
+
+- name: Pharasma
+  alignment: Neutral
+  goodness: Neutral
+  portfolios:
+    - fate
+    - death
+    - prophecy
+    - birth
+  domains:
+    - Death
+    - Healing
+    - Knowledge
+    - Repose
+    - Water
+  weapon: Dagger
+
+- name: Nethys
+  alignment: Neutral
+  goodness: Neutral
+  portfolios:
+    - magic
+  domains:
+    - Destruction
+    - Knowledge
+    - Magic
+    - Protection
+    - Rune
+  weapon: Quarterstaff
+
+- name: Gorum
+  alignment: Chaotic
+  goodness: Neutral
+  portfolios:
+    - strength
+    - battle
+    - weapons
+  domains:
+    - Chaos
+    - Destruction
+    - Glory
+    - Strength
+    - War
+  weapon: Greatsword
+
+- name: Calistria
+  alignment: Chaotic
+  goodness: Neutral
+  portfolios:
+    - trickery
+    - lust
+    - revenge
+  domains:
+    - Chaos
+    - Charm
+    - Knowledge
+    - Luck
+    - Trickery
+  weapon: Whip
+
+- name: Asmodeus
+  alignment: Lawful
+  goodness: Evil
+  portfolios:
+    - tyranny
+    - slavery
+    - pride
+    - contracts
+  domains:
+    - Evil
+    - Fire
+    - Law
+    - Magic
+    - Trickery
+  weapon: Mace
+
+- name: Zon-Kuthon
+  alignment: Lawful
+  goodness: Evil
+  portfolios:
+    - envy
+    - pain
+    - darkness
+    - loss
+  domains:
+    - Darkness
+    - Death
+    - Destruction
+    - Evil
+    - Law
+  weapon: Spiked Chain
+
+- name: Urgathoa
+  alignment: Neutral
+  goodness: Evil
+  portfolios:
+    - gluttony
+    - disease
+    - undeath
+  domains:
+    - Death
+    - Evil
+    - Magic
+    - Strength
+    - War
+  weapon: Scythe
+
+- name: Norgorber
+  alignment: Neutral
+  goodness: Evil
+  portfolios:
+    - greed
+    - secrets
+    - poison
+    - murder
+  domains:
+    - Charm
+    - Death
+    - Evil
+    - Knowledge
+    - Trickery
+  weapon: Short Sword
+
+- name: Lamashtu
+  alignment: Chaotic
+  goodness: Evil
+  portfolios:
+    - madness
+    - monsters
+    - nightmares
+  domains:
+    - Chaos
+    - Evil
+    - Madness
+    - Strength
+    - Trickery
+  weapon: Falchion
+
+- name: Rovagug
+  alignment: Chaotic
+  goodness: Evil
+  portfolios:
+    - wrath
+    - disaster
+    - destruction
+  domains:
+    - Chaos
+    - Destruction
+    - Evil
+    - War
+    - Weather
+  weapon: Greataxe
+

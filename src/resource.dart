@@ -1,6 +1,7 @@
 library resource;
 
 import 'ability.dart';
+import 'alignment.dart';
 import 'dart:mirrors';
 
 abstract class Resource {
@@ -10,13 +11,12 @@ abstract class Resource {
   
   Resource.map(Map data)
   {
-    print('\tcreating skill for ${data['name']}');
     ObjectMirror o = reflect(this);
     ClassMirror c = reflectClass(runtimeType);
-    while(c != null && c.runtimeType != 'Object')
+    while(c != null && c.simpleName != #Object)
     {
+      print('${c}');
       for (var k in c.declarations.keys) {
-        print('\t${k}');
         if(data[MirrorSystem.getName(k)] != null)
         {
           print('\t\tsetting ${k} : ${data[MirrorSystem.getName(k)]}');
@@ -27,7 +27,6 @@ abstract class Resource {
       {
         c = c.superclass;
       }
-      print('${c}');
     }
     print('resource db ${this._getDb()}');
     this._getDb()[name] = this;
@@ -159,20 +158,31 @@ class Class extends Resource
 
 class Armor extends Resource
 {
-  int acp;
-  int bonus;
+  static Map<String, Armor> _armor = {};
+  var acp;
+  var bonus;
   String category;
 
   String cost;
-  int max_dex_bonus = null;
+  var max_dex_bonus;
   int spell_fail_pct;
-  int speed30;
-  int speed20;
+  var speed30;
+  var speed20;
   int weight;
 
   Armor(name, description, this.bonus, this.acp, this.category) : super(name, description);
 
   Armor.map(map) : super.map(map);
+
+  static Armor get(name)
+  {
+    return _armor[name];
+  }
+
+  _getDb()
+  {
+    return _armor;
+  }
 }
 
 class Mail extends Armor
@@ -180,6 +190,17 @@ class Mail extends Armor
   Mail(name, description, bonus, acp, category) : super(name, description, bonus, acp, category);
 
   Mail.map(map) : super.map(map);
+
+  static Mail get(name)
+  {
+    return Mail._getDb()[name];
+  }
+
+  /* static members not inherited */
+  _getDb()
+  {
+    return super._getDb();
+  }
 }
 
 class Shield extends Armor
@@ -187,5 +208,80 @@ class Shield extends Armor
   Shield(name, description, bonus, acp, category) : super(name, description, bonus, acp, category);
 
   Shield.map(map) : super.map(map);
+
+  static Shield get(name)
+  {
+    return Shield._getDb()[name];
+  }
+
+  /* static members not inherited */
+  _getDb()
+  {
+    return super._getDb();
+  }
+
 }
 
+class Weapon extends Resource
+{
+  static Map<String, Weapon> _weapons = {};
+  String category;
+  String usage;
+  String damage;
+  String critical;
+  String range;
+  var weight;
+  List<String> damageType;
+  String type;
+
+  Weapon.map(map) : super.map(map);
+
+
+  static Weapon get(name)
+  {
+    return _weapons[name];
+  }
+
+  _getDb()
+  {
+    return _weapons;
+  }
+}
+
+class Deity extends Resource
+{
+  static Map<String, Deity> _deities = {};
+  Alignment _alignment;
+  Goodness _goodness;
+  var portfolio = [];
+  var domains = [];
+  Weapon _weapon;
+
+  Deity.map(map) : super.map(map);
+
+  get goodness => _goodness;
+
+  set goodness(goodness)
+  {
+    _goodness = Goodness.get(goodness);
+  }
+
+  get alignment => _alignment;
+
+  set alignment(alignment)
+  {
+    _alignment = Alignment.get(alignment);
+  }
+
+  get weapon => _weapon;
+
+  set weapon(weapon)
+  {
+    _weapon = Weapon.get(weapon);
+  }
+
+  _getDb()
+  {
+    return _deities;
+  }
+}

@@ -1,4 +1,4 @@
-name: TestFirst
+name: charmgr
 dependencies:
   browser: any
   darmatch: any
