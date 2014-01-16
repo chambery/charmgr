@@ -165,7 +165,7 @@ class Armor extends Resource
 
   String cost;
   var max_dex_bonus;
-  int spell_fail_pct;
+  var spell_fail;
   var speed30;
   var speed20;
   int weight;
@@ -258,7 +258,12 @@ class Deity extends Resource
   Weapon _weapon;
 
   Deity.map(map) : super.map(map);
-
+  
+  static Deity get(name)
+  {
+    return _deities[name];
+  }
+  
   get goodness => _goodness;
 
   set goodness(goodness)
@@ -284,4 +289,74 @@ class Deity extends Resource
   {
     return _deities;
   }
+}
+
+class Domain extends Resource
+{
+  static Map<String, Domain> _domains = {};
+  List<Deity> _deities = [];
+  List<Spell> _spells = [];
+  
+  Domain.map(map) : super.map(map);
+  
+  get spells => _spells;
+  
+  set spells (spells)
+  {
+    for(var spell in spells)
+    {
+      if(Spell.get(spell) != null)
+      {
+        _spells.add(Spell.get(spell));      
+      }
+    }
+    
+  }
+  
+  get deities => _deities;
+  
+  set deities(deities)
+  {
+      for(var deity in deities)
+      {
+        if(Deity.get(deity) != null)
+        {
+          _deities.add(Deity.get(deity));      
+        }
+      }
+  }
+  
+  _getDb()
+  {
+    return _domains;
+  }
+}
+
+class Spell extends Resource
+{
+  static Map<String, Spell> _spells = {};
+  String summary;
+  String school;
+  String composition;
+  String time;
+  String range;
+  String effect;
+  String duration;
+  String save; 
+  var sr;
+  List<Class> classes;
+  int phb;
+  
+  Spell.map(map) : super.map(map);
+  
+  static get(spell)
+  {
+    return _spells[spell];
+  }
+  
+  _getDb()
+  {
+    return _spells;
+  }
+  
 }

@@ -56,4 +56,21 @@ Map load()
   {
     new Deity.map(deity);
   }
+
+  print('loading spells.yaml');
+  file = new File('../src/resources/spells.yaml');
+  List spells = loadYaml(file.readAsStringSync());
+  for(var spell in spells)
+  {
+    new Spell.map(spell);
+  }
+
+  print('loading domains.yaml');
+  file = new File('../src/resources/domains.yaml');
+  List domains = loadYaml(file.readAsStringSync());
+  for(var domain in domains)
+  {
+    new Domain.map(domain);
+  }
+
 }

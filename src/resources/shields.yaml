@@ -3,7 +3,7 @@
   bon: 1
   max_dex_bonus: '-'
   acp: -1
-  spell_fail: 5%
+  spell_fail: 5
   speed30: '-'
   speed20: '-'
   weight: 5
@@ -14,7 +14,7 @@
   bon: 1
   max_dex_bonus: '-'
   acp: -1
-  spell_fail: 5%
+  spell_fail: 5
   speed30: '-'
   speed20: '-'
   weight: 5
@@ -25,7 +25,7 @@
   bon: 1
   max_dex_bonus: '-'
   acp: -1
-  spell_fail: 5%
+  spell_fail: 5
   speed30: '-'
   speed20: '-'
   weight: 6
@@ -36,7 +36,7 @@
   bon: 2
   max_dex_bonus: '-'
   acp: -2
-  spell_fail: 15%
+  spell_fail: 15
   speed30: '-'
   speed20: '-'
   weight: 10
@@ -47,7 +47,7 @@
   bon: 2
   max_dex_bonus: '-'
   acp: -2
-  spell_fail: 15%
+  spell_fail: 15
   speed30: '-'
   speed20: '-'
   weight: 15
@@ -58,7 +58,7 @@
   bon: 4
   max_dex_bonus: '-'
   acp: -10
-  spell_fail: 50%
+  spell_fail: 50
   speed30: '-'
   speed20: '-'
   weight: 45

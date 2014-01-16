@@ -3,7 +3,7 @@
   bonus: 1
   max_dex_bonus: 8
   acp: 0
-  spell_fail: 5%
+  spell_fail: 5
   speed30: 30
   speed20: 20
   weight: 10
@@ -14,7 +14,7 @@
   bonus: 2
   max_dex_bonus: 6
   acp: 0
-  spell_fail: 10%
+  spell_fail: 10
   speed30: 30
   speed20: 20
   weight: 15
@@ -25,7 +25,7 @@
   bonus: 3
   max_dex_bonus: 5
   acp: -1
-  spell_fail: 15%
+  spell_fail: 15
   speed30: 30
   speed20: 20
   weight: 20
@@ -36,7 +36,7 @@
   bonus: 4
   max_dex_bonus: 4
   acp: -2
-  spell_fail: 20%
+  spell_fail: 20
   speed30: 30
   speed20: 20
   weight: 25
@@ -47,7 +47,7 @@
   bonus: 3
   max_dex_bonus: 4
   acp: -3
-  spell_fail: 20%
+  spell_fail: 20
   speed30: 20
   speed20: 15
   weight: 25
@@ -58,7 +58,7 @@
   bonus: 4
   max_dex_bonus: 3
   acp: -4
-  spell_fail: 25%
+  spell_fail: 25
   speed30: 20
   speed20: 15
   weight: 30
@@ -69,7 +69,7 @@
   bonus: 5
   max_dex_bonus: 2
   acp: -5
-  spell_fail: 30%
+  spell_fail: 30
   speed30: 20
   speed20: 15
   weight: 40
@@ -80,7 +80,7 @@
   bonus: 5
   max_dex_bonus: 3
   acp: -4
-  spell_fail: 25%
+  spell_fail: 25
   speed30: 20
   speed20: 15
   weight: 30
@@ -91,7 +91,7 @@
   bonus: 6
   max_dex_bonus: 0
   acp: -7
-  spell_fail: 40%
+  spell_fail: 40
   speed30: 20
   speed20: 15
   weight: 45
@@ -102,7 +102,7 @@
   bonus: 6
   max_dex_bonus: 1
   acp: -6
-  spell_fail: 35%
+  spell_fail: 35
   speed30: 20
   speed20: 15
   weight: 35
@@ -113,7 +113,7 @@
   bonus: 7
   max_dex_bonus: 0
   acp: -7
-  spell_fail: 40%
+  spell_fail: 40
   speed30: 20
   speed20: 15
   weight: 50
@@ -124,7 +124,7 @@
   bonus: 8
   max_dex_bonus: 1
   acp: -6
-  spell_fail: 35%
+  spell_fail: 35
   speed30: 20
   speed20: 15
   weight: 50
