@@ -18,12 +18,18 @@ class Ability
   {
     switch(name)
     {
-      case 'Strength': return Ability.STRENGTH;      
-      case 'Intelligence': return Ability.INTELLIGENCE;      
-      case 'Dexterity': return Ability.DEXTERITY;      
-      case 'Constitution': return Ability.CONSTITUTION;      
-      case 'Wisdom': return Ability.WISDOM;
-      case 'Charisma': return Ability.CHARISMA;      
+	    case 'Strength': return Ability.STRENGTH;
+	    case 'Str': return Ability.STRENGTH;
+	    case 'Intelligence': return Ability.INTELLIGENCE;
+	    case 'Int': return Ability.INTELLIGENCE;
+	    case 'Dexterity': return Ability.DEXTERITY;
+	    case 'Dex': return Ability.DEXTERITY;
+	    case 'Constitution': return Ability.CONSTITUTION;
+	    case 'Con': return Ability.CONSTITUTION;
+	    case 'Wisdom': return Ability.WISDOM;
+	    case 'Wis': return Ability.WISDOM;
+	    case 'Charisma': return Ability.CHARISMA;
+	    case 'Cha': return Ability.CHARISMA;
     }
   }
 }

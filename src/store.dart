@@ -64,13 +64,42 @@ Map load()
   {
     new Spell.map(spell);
   }
+  
+  Map clazzes = Class.get();
+  Map spellss = Spell.get();
+  for(Class clazz in clazzes.values)
+  {
+    for(Spell spell in spellss.values)
+    {
+      int class_level = spell.classes[clazz];
+      if(class_level != null)
+      {
+        clazz.spells[class_level].add(spell);
+        print('\tadding ${spell} to ${clazz} at level ${class_level + 1}');
+      }
+    }
+  }
 
   print('loading domains.yaml');
   file = new File('../src/resources/domains.yaml');
   List domains = loadYaml(file.readAsStringSync());
   for(var domain in domains)
   {
-    new Domain.map(domain);
+	  new Domain.map(domain);
   }
 
+  print('loading feats.yaml');
+  file = new File('../src/resources/feats.yaml');
+  List feats = loadYaml(file.readAsStringSync());
+  /* have to create the feats so we can ref them from the prereqs */
+  for(var feat in feats)
+  {
+    Feat f = new Feat(feat['name'], feat['description']);
+	  Feat.put(f);
+  }
+
+  for(var feat in feats)
+  {
+	  new Feat.map(feat);
+  }
 }
