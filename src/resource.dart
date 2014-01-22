@@ -4,7 +4,32 @@ import 'ability.dart';
 import 'alignment.dart';
 import 'dart:mirrors';
 
-abstract class Resource {
+class RelatedData
+{
+  ClassMirror type;
+  var filter = {};
+
+  RelatedData(map)
+  {
+    MirrorSystem mirrors = currentMirrorSystem();
+    LibraryMirror lm = mirrors.findLibrary(new Symbol('resource'));
+    type = lm.declarations[new Symbol(map['type'])];
+    print('\t\trelated_data: ${this.type.reflectedType}');
+
+//    for(var key in map['filter'].keys)
+//    {
+      // TODO - create a filter mechanism to use reflection to pick instances from the global hash whose fields match criteria
+      /* Weapon.category == 'martial' */
+      filter = map['filter'];
+//      filter[type.getField(new Symbol(key))] = map['filter'][key];
+//    }
+  }
+
+
+}
+
+abstract class Resource
+{
   String name;
   String description;
   Resource(this.name, this.description);
@@ -19,9 +44,9 @@ abstract class Resource {
     }
     else
     {
-      o = reflect(this);      
+      o = reflect(this);
     }
-    
+
     ClassMirror c = reflectClass(runtimeType);
     while(c != null && c.simpleName != #Object)
     {
@@ -41,9 +66,9 @@ abstract class Resource {
 //    print('${this.runtimeType} db ${this._getDb()}');
     if(this._getDb()[data['name']] == null)
     {
-      this._getDb()[name] = this;      
+      this._getDb()[name] = this;
     }
-    
+
     print('\t${this._getDb()[data['name']].name} - end constructor');
   }
 
@@ -51,7 +76,7 @@ abstract class Resource {
 
   toString()
   {
-    return name;
+    return '${name} {${runtimeType}}';
   }
 
 }
@@ -86,19 +111,7 @@ class Skill extends Resource
   {
     for(var clz in classes)
     {
-      if(clz is String)
-      {
-        var clazz = Class.get(clz);
-        if(clazz != null)
-        {
-          _classes.add(clazz);
-        }
-
-      }
-      if(clz is Class)
-      {
-        _classes.add(clz);
-      }
+      _classes.add(Class.get(clz));
     }
   }
 
@@ -106,7 +119,7 @@ class Skill extends Resource
 
   set subtypes(List subskills)
   {
-    print('processing subskills');
+//    print('processing subskills');
     for(Map subSkillData in subskills)
     {
       print('\t\t${subSkillData}');
@@ -115,7 +128,7 @@ class Skill extends Resource
       _subtypes[subskill.name] = subskill;
       _skills[subskill.name] = subskill;
     }
-    print('done processing subskills');
+//    print('done processing subskills');
   }
   get ability => _ability;
   set ability(name)
@@ -123,7 +136,7 @@ class Skill extends Resource
     _ability = Ability.get(name);
   }
 
-  static Skill get(name)
+  static Skill get([name, filter])
   {
     return _skills[name];
   }
@@ -193,9 +206,43 @@ class Armor extends Resource
 
   Armor.map(map) : super.map(map);
 
-  static Armor get(name)
+  static get([name, filter])
   {
-    return _armor[name];
+    if(name != null)
+    {
+      if(filter == null) filter = {};
+      filter['name'] = name;
+    }
+
+    if(filter != null)
+    {
+      var result = [];
+      for(var armor in _armor.values)
+      {
+        bool match = true;
+        ObjectMirror m = reflect(armor);
+        ClassMirror c = reflectClass(armor.runtimeType);
+        // TODO - factor this mess out
+        for(var field in filter.keys)
+        {
+          var fieldSym = new Symbol(field);
+          if(m.getField(fieldSym) != null && m.getField(fieldSym).reflectee != filter[field])
+          {
+            match = false;
+            break;
+          }
+        }
+        if(match)
+        {
+          result.add(armor);
+        }
+      }
+
+//      print('${result}');
+      return name != null ? result[0] : result;
+    }
+
+    return _armor;
   }
 
   _getDb()
@@ -334,10 +381,7 @@ class Domain extends Resource
   {
     for(var spell in spells)
     {
-      if(Spell.get(spell) != null)
-      {
-        _spells.add(Spell.get(spell));
-      }
+      _spells.add(Spell.get(spell));
     }
 
   }
@@ -348,10 +392,7 @@ class Domain extends Resource
   {
       for(var deity in deities)
       {
-        if(Deity.get(deity) != null)
-        {
-          _deities.add(Deity.get(deity));
-        }
+        _deities.add(Deity.get(deity));
       }
   }
 
@@ -394,11 +435,8 @@ class Spell extends Resource
   {
     for(var clazz in classes.keys)
     {
-      if(Class.get(clazz) != null)
-      {
-        _classes[Class.get(clazz)] = classes[clazz];
-        print('\t\t\tmapping ${Class.get(clazz)} :: ${classes[clazz]}');
-      }
+      _classes[Class.get(clazz)] = classes[clazz];
+//      print('\t\t\tmapping ${Class.get(clazz)} :: ${classes[clazz]}');
     }
   }
 
@@ -410,17 +448,25 @@ class Spell extends Resource
 }
 
 
+class ClassFeature
+{
+
+}
+
 class Feat extends Resource
 {
   static Map<String, Feat> _feats = {};
   String cmb;
-  List<String> groups;
+  Set<String> groups;
   Map<Skill, Map> _skills = {};
   Map _prereqs = {};
   String summary;
   var mobility;
   bool conditional;
   Map<Class, int> _classes = {};
+  RelatedData _relatedData;
+  Set<Goodness> _goodness;
+  bool spell_related = false;
 
   Feat.map(map) : super.map(map);
 
@@ -451,35 +497,33 @@ class Feat extends Resource
   }
 
   get classes => _classes;
-
   set classes(Map classes)
   {
     for(var clazz in classes.keys)
     {
-      if(Class.get(clazz) != null)
-      {
-        _classes[Class.get(clazz)] = classes[clazz];
-        print('\t\t\tmapping ${Class.get(clazz)} :: ${classes[clazz]}');
-      }
+      _classes[Class.get(clazz)] = classes[clazz];
+//      print('\t\t\tmapping ${Class.get(clazz)} :: ${classes[clazz]}');
     }
   }
 
   get skills => _skills;
-
   set skills(Map skills)
   {
     for(var skill in skills.keys)
     {
-      if(Skill.get(skill) != null)
-      {
-        _skills[Skill.get(skill)] = skills[skill];
-        print('\t\t\tmapping ${Skill.get(skill)} :: ${skills[skill]}');
-      }
+      _skills[Skill.get(skill)] = skills[skill];
     }
   }
 
-  get prereqs => _prereqs;
+  get related_data => _relatedData;
+  set related_data(map)
+  {
+    print('\t\trelated_data: ${map}');
+    _relatedData = new RelatedData(map);
 
+  }
+
+  get prereqs => _prereqs;
   set prereqs(Map prereqs)
   {
     for(var prereq in prereqs.keys)
@@ -487,41 +531,61 @@ class Feat extends Resource
 
       if(prereq == 'feats')
       {
-
+        _prereqs['feats'] = [];
         /* feats : - Improved Overrun */
         for(var feat in prereqs['feats'])
         {
-
-          if(_prereqs['feats'] == null)
-          {
-            _prereqs['feats'] = [];
-          }
-
           _prereqs['feats'].add(Feat.get(feat));
-
-//            /* level : bonus eg. 10 : 4 */
-//            for(var level in prereqs[prereq][Skill.get(skill)])
-//            {
-//              _prereqs[prereq][Skill.get(skill)][level] = prereqs[prereq][Skill.get(skill)][level];
-//            }
         }
-
       }
+
       else if(prereq == 'abilities')
       {
+        _prereqs['abilities'] = {};
         /* abilities:  Dex:  13 */
         for(var ability in prereqs['abilities'].keys)
         {
-
-          if(_prereqs['abilities'] == null)
-          {
-            _prereqs['abilities'] = {};
-          }
-
           _prereqs['abilities'][Ability.get(ability)] = prereqs['abilities'][ability];
-
         }
       }
+
+      else if(prereq == 'level')
+      {
+        _prereqs['level'] = prereqs['level'];
+      }
+
+      else if(prereq == 'base_attack_bonus')
+      {
+        _prereqs['base_attack_bonus'] = prereqs['base_attack_bonus'];
+      }
+
+      else if(prereq == 'multi')
+      {
+        _prereqs['multi'] = [];
+        for(var multi in prereqs['multi'])
+        {
+	        _prereqs['multi'].add(prereqs['multi']);
+        }
+      }
+
+      else if(prereq == 'class_features')
+      {
+        _prereqs['class_features'] = [];
+        for(var feature in prereqs[prereq])
+        {
+          // TODO - add features to the class
+          _prereqs['class_features'].add(feature);
+        }
+      }
+    }
+  }
+
+  get goodness => _goodness;
+  set goodness(goodnesses)
+  {
+    for(var goodness in goodnesses)
+    {
+      _goodness.add(Goodness.get(goodness));
     }
   }
 

@@ -3,6 +3,7 @@ library storetest;
 import '../src/store.dart';
 import 'package:yaml/yaml.dart';
 import 'dart:io';
+import 'dart:mirrors';
 import '../src/resource.dart';
 import '../src/ability.dart';
 
@@ -43,6 +44,13 @@ void main()
     print('Deflect Arrows contains Improved Unarmed Strike');        
     print('${Feat.get('Deflect Arrows').prereqs['feats'].contains(Feat.get('Improved Unarmed Strike'))} :: ${Feat.get('Deflect Arrows').prereqs['feats'][0].hashCode} <> ${Feat.get('Improved Unarmed Strike').hashCode} ${Feat.get('Improved Unarmed Strike')}');
     expect(Feat.get('Deflect Arrows').prereqs['feats'].contains(Feat.get('Improved Unarmed Strike')), isTrue);
+    expect(Feat.get('Armor Proficiency, Light').related_data.type, reflectClass(Armor));
+    RelatedData r = Feat.get('Armor Proficiency, Light').related_data;
+    // TODO - make the mixed return type good again (don't want to have to always get a list)
+    expect(r.type.invoke(new Symbol('get'), [null, r.filter]).reflectee.contains(Armor.get('Padded')), isTrue);
+    expect(r.type.invoke(new Symbol('get'), [null, r.filter]).reflectee.contains(Armor.get('Hide')), isFalse);
+    expect(Feat.get('Brew Potion').spell_related, isTrue);
+    expect(Feat.get('Blinding Critical').spell_related, isFalse);
 
   });
 }

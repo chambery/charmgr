@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a88b742-0ed0-4a18-bb78-998a41acaa7c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/chambery.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/resources/feats.yaml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ability.dart" afterPath="$PROJECT_DIR$/src/ability.dart" />
+    <list default="true" id="4a88b742-0ed0-4a18-bb78-998a41acaa7c" name="Default" comment="yaml-ize spells&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/commontest.dart" afterPath="$PROJECT_DIR$/test/commontest.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/feats.yaml" afterPath="$PROJECT_DIR$/src/resources/feats.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource.dart" afterPath="$PROJECT_DIR$/src/resource.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/spells.yaml" afterPath="$PROJECT_DIR$/src/resources/spells.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store.dart" afterPath="$PROJECT_DIR$/src/store.dart" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/storetest.dart" afterPath="$PROJECT_DIR$/test/storetest.dart" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -34,13 +28,13 @@
     <favorites_list name="TestFirst" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4537445">
+    <splitter split-orientation="horizontal" split-proportion="0.46979865">
       <split-first>
         <leaf>
           <file leaf-file-name="common.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/common.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="16" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="924">
+                <state line="2" column="16" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="792">
                   <folding />
                 </state>
               </provider>
@@ -49,7 +43,7 @@
           <file leaf-file-name="store.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/store.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="96" column="45" selection-start="2460" selection-end="2460" vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="1540">
+                <state line="98" column="3" selection-start="2494" selection-end="2494" vertical-scroll-proportion="0.0" vertical-offset="1176" max-vertical-offset="1320">
                   <folding />
                 </state>
               </provider>
@@ -58,90 +52,26 @@
           <file leaf-file-name="skills.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/skills.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="267" column="3" selection-start="84469" selection-end="84469" vertical-scroll-proportion="0.0" vertical-offset="3361" max-vertical-offset="6034">
+                <state line="267" column="3" selection-start="84469" selection-end="84469" vertical-scroll-proportion="0.0" vertical-offset="3204" max-vertical-offset="5172">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="resource.dart" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="resource.dart" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/resource.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="510" column="5" selection-start="8908" selection-end="8908" vertical-scroll-proportion="3.264574" vertical-offset="0" max-vertical-offset="1612">
-                  <folding>
-                    <element signature="n#!!block;n#Resource#0" expanded="false" />
-                    <element signature="e#223#808#1" expanded="false" />
-                    <element signature="e#360#699#0" expanded="false" />
-                    <element signature="e#424#631#0" expanded="false" />
-                    <element signature="e#484#623#0" expanded="false" />
-                    <element signature="e#658#693#0" expanded="false" />
-                    <element signature="e#842#864#1" expanded="false" />
-                    <element signature="n#!!block;n#Skill#0" expanded="false" />
-                    <element signature="e#1180#1301#1" expanded="false" />
-                    <element signature="e#1238#1271#0" expanded="false" />
-                    <element signature="e#1403#1668#1" expanded="false" />
-                    <element signature="e#1437#1664#0" expanded="false" />
-                    <element signature="e#1469#1592#0" expanded="false" />
-                    <element signature="e#1541#1583#0" expanded="false" />
-                    <element signature="e#1622#1658#0" expanded="false" />
-                    <element signature="e#1733#2066#1" expanded="false" />
-                    <element signature="e#1813#2022#0" expanded="false" />
-                    <element signature="e#2116#2155#1" expanded="false" />
-                    <element signature="e#2184#2215#1" expanded="false" />
-                    <element signature="e#2234#2259#1" expanded="false" />
-                    <element signature="n#!!block;n#Class#0" expanded="false" />
-                    <element signature="e#2931#2963#1" expanded="false" />
-                    <element signature="e#3024#3113#1" expanded="false" />
-                    <element signature="e#3051#3081#0" expanded="false" />
-                    <element signature="e#3132#3158#1" expanded="false" />
-                    <element signature="n#!!block;n#Armor#0" expanded="false" />
-                    <element signature="e#3534#3564#1" expanded="false" />
-                    <element signature="e#3579#3603#1" expanded="false" />
-                    <element signature="n#!!block;n#Mail#0" expanded="false" />
-                    <element signature="e#3794#3831#1" expanded="false" />
-                    <element signature="e#3883#3915#1" expanded="false" />
-                    <element signature="n#!!block;n#Shield#0" expanded="false" />
-                    <element signature="e#4114#4153#1" expanded="false" />
-                    <element signature="e#4205#4237#1" expanded="false" />
-                    <element signature="n#!!block;n#Weapon#0" expanded="false" />
-                    <element signature="e#4528#4560#1" expanded="false" />
-                    <element signature="e#4575#4601#1" expanded="false" />
-                    <element signature="n#!!block;n#Deity#0" expanded="false" />
-                    <element signature="e#4849#4881#1" expanded="false" />
-                    <element signature="e#4940#4985#1" expanded="false" />
-                    <element signature="e#5048#5096#1" expanded="false" />
-                    <element signature="e#5147#5186#1" expanded="false" />
-                    <element signature="e#5201#5227#1" expanded="false" />
-                    <element signature="n#!!block;n#Domain#0" expanded="false" />
-                    <element signature="e#5425#5514#1" expanded="false" />
-                    <element signature="e#5452#5482#0" expanded="false" />
-                    <element signature="e#5566#5703#1" expanded="false" />
-                    <element signature="e#5601#5698#0" expanded="false" />
-                    <element signature="e#5644#5692#0" expanded="false" />
-                    <element signature="e#5758#5910#1" expanded="false" />
-                    <element signature="e#5798#5906#0" expanded="false" />
-                    <element signature="e#5845#5898#0" expanded="false" />
-                    <element signature="e#5925#5951#1" expanded="false" />
-                    <element signature="n#!!block;n#Spell#0" expanded="false" />
-                    <element signature="e#6282#6371#1" expanded="false" />
-                    <element signature="e#6310#6339#0" expanded="false" />
-                    <element signature="e#6430#6659#1" expanded="false" />
-                    <element signature="e#6471#6655#0" expanded="false" />
-                    <element signature="e#6514#6649#0" expanded="false" />
-                    <element signature="e#6674#6699#1" expanded="false" />
-                    <element signature="e#7066#7234#1" expanded="false" />
-                    <element signature="e#7106#7134#0" expanded="false" />
-                    <element signature="e#7165#7204#0" expanded="false" />
-                    <element signature="e#7259#7344#1" expanded="false" />
-                    <element signature="e#7286#7314#0" expanded="false" />
-                    <element signature="e#7403#7632#1" expanded="false" />
-                    <element signature="e#7444#7628#0" expanded="false" />
-                    <element signature="e#7487#7622#0" expanded="false" />
-                    <element signature="e#7687#7912#1" expanded="false" />
-                    <element signature="e#7727#7908#0" expanded="false" />
-                    <element signature="e#7770#7902#0" expanded="false" />
-                    <element signature="e#8927#8951#1" expanded="false" />
-                  </folding>
+                <state line="468" column="28" selection-start="8431" selection-end="8431" vertical-scroll-proportion="0.33417085" vertical-offset="5483" max-vertical-offset="7224">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="mirrors.dart" pinned="false" current="false" current-in-tab="false">
+            <entry file="file:///Applications/dart/dart-sdk/lib/mirrors/mirrors.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="396" column="17" selection-start="14204" selection-end="14204" vertical-scroll-proportion="0.0" vertical-offset="4250" max-vertical-offset="14616">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -149,7 +79,7 @@
           <file leaf-file-name="alignment.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/alignment.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="31" column="54" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="686">
+                <state line="31" column="54" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="588">
                   <folding />
                 </state>
               </provider>
@@ -158,7 +88,7 @@
           <file leaf-file-name="pubspec.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pubspec.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="168">
+                <state line="6" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="144">
                   <folding />
                 </state>
               </provider>
@@ -168,10 +98,19 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="storetest.dart" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="storetest.dart" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/storetest.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="108" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.73766816" vertical-offset="61" max-vertical-offset="507">
+                <state line="52" column="40" selection-start="3105" selection-end="3105" vertical-scroll-proportion="1.3291457" vertical-offset="95" max-vertical-offset="732">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="mail.yaml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/resources/mail.yaml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="45" column="13" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="2160">
                   <folding />
                 </state>
               </provider>
@@ -180,7 +119,16 @@
           <file leaf-file-name="feats.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/feats.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="556" column="0" selection-start="29831" selection-end="29940" vertical-scroll-proportion="0.0" vertical-offset="7672" max-vertical-offset="29722">
+                <state line="247" column="8" selection-start="13862" selection-end="13873" vertical-scroll-proportion="0.0" vertical-offset="2675" max-vertical-offset="24912">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="classes.yaml" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/resources/classes.yaml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="342" column="11" selection-start="13788" selection-end="13788" vertical-scroll-proportion="0.0" vertical-offset="4104" max-vertical-offset="4428">
                   <folding />
                 </state>
               </provider>
@@ -189,7 +137,7 @@
           <file leaf-file-name="deities.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/deities.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="277" column="21" selection-start="3832" selection-end="3832" vertical-scroll-proportion="0.0" vertical-offset="3878" max-vertical-offset="4410">
+                <state line="277" column="21" selection-start="3832" selection-end="3832" vertical-scroll-proportion="0.0" vertical-offset="3324" max-vertical-offset="3780">
                   <folding />
                 </state>
               </provider>
@@ -198,7 +146,7 @@
           <file leaf-file-name="ability.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ability.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="3" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="560">
+                <state line="33" column="3" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="480">
                   <folding />
                 </state>
               </provider>
@@ -207,7 +155,7 @@
           <file leaf-file-name="weapons.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/weapons.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="768" column="14" selection-start="11569" selection-end="11569" vertical-scroll-proportion="0.0" vertical-offset="10752" max-vertical-offset="10850">
+                <state line="768" column="14" selection-start="11569" selection-end="11569" vertical-scroll-proportion="0.0" vertical-offset="9216" max-vertical-offset="9300">
                   <folding />
                 </state>
               </provider>
@@ -246,11 +194,11 @@
         <option value="$PROJECT_DIR$/src/alignment.dart" />
         <option value="$PROJECT_DIR$/src/resources/deities.yaml" />
         <option value="$PROJECT_DIR$/src/ability.dart" />
-        <option value="$PROJECT_DIR$/src/resources/feats.yaml" />
         <option value="$PROJECT_DIR$/src/store.dart" />
         <option value="$PROJECT_DIR$/src/feat.dart" />
-        <option value="$PROJECT_DIR$/src/resource.dart" />
+        <option value="$PROJECT_DIR$/src/resources/feats.yaml" />
         <option value="$PROJECT_DIR$/test/storetest.dart" />
+        <option value="$PROJECT_DIR$/src/resource.dart" />
       </list>
     </option>
   </component>
@@ -332,7 +280,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="options.lastSelected" value="editor.preferences.tabs" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -507,17 +455,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1362" height="746" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24889868" sideWeight="0.6741214" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24832214" sideWeight="0.6741214" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3958641" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32053176" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32053176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33180428" sideWeight="0.5003728" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33180428" sideWeight="0.49962714" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32721713" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -637,80 +585,7 @@
     <entry file="file://$PROJECT_DIR$/src/resource.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state line="200" column="25" selection-start="3999" selection-end="3999" vertical-scroll-proportion="0.0" vertical-offset="2621" max-vertical-offset="3024">
-          <folding>
-            <element signature="n#!!block;n#Resource#0" expanded="false" />
-            <element signature="e#223#808#1" expanded="false" />
-            <element signature="e#360#699#0" expanded="false" />
-            <element signature="e#424#631#0" expanded="false" />
-            <element signature="e#484#623#0" expanded="false" />
-            <element signature="e#658#693#0" expanded="false" />
-            <element signature="e#842#864#1" expanded="false" />
-            <element signature="n#!!block;n#Skill#0" expanded="false" />
-            <element signature="e#1180#1301#1" expanded="false" />
-            <element signature="e#1238#1271#0" expanded="false" />
-            <element signature="e#1403#1668#1" expanded="false" />
-            <element signature="e#1437#1664#0" expanded="false" />
-            <element signature="e#1469#1592#0" expanded="false" />
-            <element signature="e#1541#1583#0" expanded="false" />
-            <element signature="e#1622#1658#0" expanded="false" />
-            <element signature="e#1733#2066#1" expanded="false" />
-            <element signature="e#1813#2022#0" expanded="false" />
-            <element signature="e#2116#2155#1" expanded="false" />
-            <element signature="e#2184#2215#1" expanded="false" />
-            <element signature="e#2234#2259#1" expanded="false" />
-            <element signature="n#!!block;n#Class#0" expanded="false" />
-            <element signature="e#2931#2963#1" expanded="false" />
-            <element signature="e#3024#3113#1" expanded="false" />
-            <element signature="e#3051#3081#0" expanded="false" />
-            <element signature="e#3132#3158#1" expanded="false" />
-            <element signature="n#!!block;n#Armor#0" expanded="false" />
-            <element signature="e#3534#3564#1" expanded="false" />
-            <element signature="e#3579#3603#1" expanded="false" />
-            <element signature="n#!!block;n#Mail#0" expanded="false" />
-            <element signature="e#3794#3831#1" expanded="false" />
-            <element signature="e#3883#3915#1" expanded="false" />
-            <element signature="n#!!block;n#Shield#0" expanded="false" />
-            <element signature="e#4114#4153#1" expanded="false" />
-            <element signature="e#4205#4237#1" expanded="false" />
-            <element signature="n#!!block;n#Weapon#0" expanded="false" />
-            <element signature="e#4528#4560#1" expanded="false" />
-            <element signature="e#4575#4601#1" expanded="false" />
-            <element signature="n#!!block;n#Deity#0" expanded="false" />
-            <element signature="e#4849#4881#1" expanded="false" />
-            <element signature="e#4940#4985#1" expanded="false" />
-            <element signature="e#5048#5096#1" expanded="false" />
-            <element signature="e#5147#5186#1" expanded="false" />
-            <element signature="e#5201#5227#1" expanded="false" />
-            <element signature="n#!!block;n#Domain#0" expanded="false" />
-            <element signature="e#5425#5514#1" expanded="false" />
-            <element signature="e#5452#5482#0" expanded="false" />
-            <element signature="e#5566#5703#1" expanded="false" />
-            <element signature="e#5601#5698#0" expanded="false" />
-            <element signature="e#5644#5692#0" expanded="false" />
-            <element signature="e#5758#5910#1" expanded="false" />
-            <element signature="e#5798#5906#0" expanded="false" />
-            <element signature="e#5845#5898#0" expanded="false" />
-            <element signature="e#5925#5951#1" expanded="false" />
-            <element signature="n#!!block;n#Spell#0" expanded="false" />
-            <element signature="e#6282#6371#1" expanded="false" />
-            <element signature="e#6310#6339#0" expanded="false" />
-            <element signature="e#6430#6659#1" expanded="false" />
-            <element signature="e#6471#6655#0" expanded="false" />
-            <element signature="e#6514#6649#0" expanded="false" />
-            <element signature="e#6674#6699#1" expanded="false" />
-            <element signature="e#7066#7234#1" expanded="false" />
-            <element signature="e#7106#7134#0" expanded="false" />
-            <element signature="e#7165#7204#0" expanded="false" />
-            <element signature="e#7259#7344#1" expanded="false" />
-            <element signature="e#7286#7314#0" expanded="false" />
-            <element signature="e#7403#7632#1" expanded="false" />
-            <element signature="e#7444#7628#0" expanded="false" />
-            <element signature="e#7487#7622#0" expanded="false" />
-            <element signature="e#7687#7912#1" expanded="false" />
-            <element signature="e#7727#7908#0" expanded="false" />
-            <element signature="e#7770#7902#0" expanded="false" />
-            <element signature="e#8927#8951#1" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -772,80 +647,7 @@
     <entry file="file://$PROJECT_DIR$/src/resource.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state line="192" column="2" selection-start="3811" selection-end="3811" vertical-scroll-proportion="0.0" vertical-offset="2409" max-vertical-offset="3024">
-          <folding>
-            <element signature="n#!!block;n#Resource#0" expanded="false" />
-            <element signature="e#223#808#1" expanded="false" />
-            <element signature="e#360#699#0" expanded="false" />
-            <element signature="e#424#631#0" expanded="false" />
-            <element signature="e#484#623#0" expanded="false" />
-            <element signature="e#658#693#0" expanded="false" />
-            <element signature="e#842#864#1" expanded="false" />
-            <element signature="n#!!block;n#Skill#0" expanded="false" />
-            <element signature="e#1180#1301#1" expanded="false" />
-            <element signature="e#1238#1271#0" expanded="false" />
-            <element signature="e#1403#1668#1" expanded="false" />
-            <element signature="e#1437#1664#0" expanded="false" />
-            <element signature="e#1469#1592#0" expanded="false" />
-            <element signature="e#1541#1583#0" expanded="false" />
-            <element signature="e#1622#1658#0" expanded="false" />
-            <element signature="e#1733#2066#1" expanded="false" />
-            <element signature="e#1813#2022#0" expanded="false" />
-            <element signature="e#2116#2155#1" expanded="false" />
-            <element signature="e#2184#2215#1" expanded="false" />
-            <element signature="e#2234#2259#1" expanded="false" />
-            <element signature="n#!!block;n#Class#0" expanded="false" />
-            <element signature="e#2931#2963#1" expanded="false" />
-            <element signature="e#3024#3113#1" expanded="false" />
-            <element signature="e#3051#3081#0" expanded="false" />
-            <element signature="e#3132#3158#1" expanded="false" />
-            <element signature="n#!!block;n#Armor#0" expanded="false" />
-            <element signature="e#3534#3564#1" expanded="false" />
-            <element signature="e#3579#3603#1" expanded="false" />
-            <element signature="n#!!block;n#Mail#0" expanded="false" />
-            <element signature="e#3794#3831#1" expanded="false" />
-            <element signature="e#3883#3915#1" expanded="false" />
-            <element signature="n#!!block;n#Shield#0" expanded="false" />
-            <element signature="e#4114#4153#1" expanded="false" />
-            <element signature="e#4205#4237#1" expanded="false" />
-            <element signature="n#!!block;n#Weapon#0" expanded="false" />
-            <element signature="e#4528#4560#1" expanded="false" />
-            <element signature="e#4575#4601#1" expanded="false" />
-            <element signature="n#!!block;n#Deity#0" expanded="false" />
-            <element signature="e#4849#4881#1" expanded="false" />
-            <element signature="e#4940#4985#1" expanded="false" />
-            <element signature="e#5048#5096#1" expanded="false" />
-            <element signature="e#5147#5186#1" expanded="false" />
-            <element signature="e#5201#5227#1" expanded="false" />
-            <element signature="n#!!block;n#Domain#0" expanded="false" />
-            <element signature="e#5425#5514#1" expanded="false" />
-            <element signature="e#5452#5482#0" expanded="false" />
-            <element signature="e#5566#5703#1" expanded="false" />
-            <element signature="e#5601#5698#0" expanded="false" />
-            <element signature="e#5644#5692#0" expanded="false" />
-            <element signature="e#5758#5910#1" expanded="false" />
-            <element signature="e#5798#5906#0" expanded="false" />
-            <element signature="e#5845#5898#0" expanded="false" />
-            <element signature="e#5925#5951#1" expanded="false" />
-            <element signature="n#!!block;n#Spell#0" expanded="false" />
-            <element signature="e#6282#6371#1" expanded="false" />
-            <element signature="e#6310#6339#0" expanded="false" />
-            <element signature="e#6430#6659#1" expanded="false" />
-            <element signature="e#6471#6655#0" expanded="false" />
-            <element signature="e#6514#6649#0" expanded="false" />
-            <element signature="e#6674#6699#1" expanded="false" />
-            <element signature="e#7066#7234#1" expanded="false" />
-            <element signature="e#7106#7134#0" expanded="false" />
-            <element signature="e#7165#7204#0" expanded="false" />
-            <element signature="e#7259#7344#1" expanded="false" />
-            <element signature="e#7286#7314#0" expanded="false" />
-            <element signature="e#7403#7632#1" expanded="false" />
-            <element signature="e#7444#7628#0" expanded="false" />
-            <element signature="e#7487#7622#0" expanded="false" />
-            <element signature="e#7687#7912#1" expanded="false" />
-            <element signature="e#7727#7908#0" expanded="false" />
-            <element signature="e#7770#7902#0" expanded="false" />
-            <element signature="e#8927#8951#1" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -895,80 +697,7 @@
     <entry file="file://$PROJECT_DIR$/src/resource.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state line="181" column="1" selection-start="3644" selection-end="3644" vertical-scroll-proportion="0.0" vertical-offset="2534" max-vertical-offset="2758">
-          <folding>
-            <element signature="n#!!block;n#Resource#0" expanded="false" />
-            <element signature="e#223#808#1" expanded="false" />
-            <element signature="e#360#699#0" expanded="false" />
-            <element signature="e#424#631#0" expanded="false" />
-            <element signature="e#484#623#0" expanded="false" />
-            <element signature="e#658#693#0" expanded="false" />
-            <element signature="e#842#864#1" expanded="false" />
-            <element signature="n#!!block;n#Skill#0" expanded="false" />
-            <element signature="e#1180#1301#1" expanded="false" />
-            <element signature="e#1238#1271#0" expanded="false" />
-            <element signature="e#1403#1668#1" expanded="false" />
-            <element signature="e#1437#1664#0" expanded="false" />
-            <element signature="e#1469#1592#0" expanded="false" />
-            <element signature="e#1541#1583#0" expanded="false" />
-            <element signature="e#1622#1658#0" expanded="false" />
-            <element signature="e#1733#2066#1" expanded="false" />
-            <element signature="e#1813#2022#0" expanded="false" />
-            <element signature="e#2116#2155#1" expanded="false" />
-            <element signature="e#2184#2215#1" expanded="false" />
-            <element signature="e#2234#2259#1" expanded="false" />
-            <element signature="n#!!block;n#Class#0" expanded="false" />
-            <element signature="e#2931#2963#1" expanded="false" />
-            <element signature="e#3024#3113#1" expanded="false" />
-            <element signature="e#3051#3081#0" expanded="false" />
-            <element signature="e#3132#3158#1" expanded="false" />
-            <element signature="n#!!block;n#Armor#0" expanded="false" />
-            <element signature="e#3534#3564#1" expanded="false" />
-            <element signature="e#3579#3603#1" expanded="false" />
-            <element signature="n#!!block;n#Mail#0" expanded="false" />
-            <element signature="e#3794#3831#1" expanded="false" />
-            <element signature="e#3883#3915#1" expanded="false" />
-            <element signature="n#!!block;n#Shield#0" expanded="false" />
-            <element signature="e#4114#4153#1" expanded="false" />
-            <element signature="e#4205#4237#1" expanded="false" />
-            <element signature="n#!!block;n#Weapon#0" expanded="false" />
-            <element signature="e#4528#4560#1" expanded="false" />
-            <element signature="e#4575#4601#1" expanded="false" />
-            <element signature="n#!!block;n#Deity#0" expanded="false" />
-            <element signature="e#4849#4881#1" expanded="false" />
-            <element signature="e#4940#4985#1" expanded="false" />
-            <element signature="e#5048#5096#1" expanded="false" />
-            <element signature="e#5147#5186#1" expanded="false" />
-            <element signature="e#5201#5227#1" expanded="false" />
-            <element signature="n#!!block;n#Domain#0" expanded="false" />
-            <element signature="e#5425#5514#1" expanded="false" />
-            <element signature="e#5452#5482#0" expanded="false" />
-            <element signature="e#5566#5703#1" expanded="false" />
-            <element signature="e#5601#5698#0" expanded="false" />
-            <element signature="e#5644#5692#0" expanded="false" />
-            <element signature="e#5758#5910#1" expanded="false" />
-            <element signature="e#5798#5906#0" expanded="false" />
-            <element signature="e#5845#5898#0" expanded="false" />
-            <element signature="e#5925#5951#1" expanded="false" />
-            <element signature="n#!!block;n#Spell#0" expanded="false" />
-            <element signature="e#6282#6371#1" expanded="false" />
-            <element signature="e#6310#6339#0" expanded="false" />
-            <element signature="e#6430#6659#1" expanded="false" />
-            <element signature="e#6471#6655#0" expanded="false" />
-            <element signature="e#6514#6649#0" expanded="false" />
-            <element signature="e#6674#6699#1" expanded="false" />
-            <element signature="e#7066#7234#1" expanded="false" />
-            <element signature="e#7106#7134#0" expanded="false" />
-            <element signature="e#7165#7204#0" expanded="false" />
-            <element signature="e#7259#7344#1" expanded="false" />
-            <element signature="e#7286#7314#0" expanded="false" />
-            <element signature="e#7403#7632#1" expanded="false" />
-            <element signature="e#7444#7628#0" expanded="false" />
-            <element signature="e#7487#7622#0" expanded="false" />
-            <element signature="e#7687#7912#1" expanded="false" />
-            <element signature="e#7727#7908#0" expanded="false" />
-            <element signature="e#7770#7902#0" expanded="false" />
-            <element signature="e#8927#8951#1" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,16 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/classes.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.06947891" vertical-offset="28" max-vertical-offset="5166" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/mail.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="38" selection-start="618" selection-end="618" vertical-scroll-proportion="-1.4181818" vertical-offset="552" max-vertical-offset="2506" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/shields.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="40" selection-start="86" selection-end="86" vertical-scroll-proportion="0.19390582" vertical-offset="0" max-vertical-offset="994" />
@@ -1086,101 +805,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="45" selection-start="2460" selection-end="2460" vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="1540">
+        <state line="98" column="3" selection-start="2494" selection-end="2494" vertical-scroll-proportion="0.0" vertical-offset="1372" max-vertical-offset="1540">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resource.dart">
+    <entry file="file://$PROJECT_DIR$/src/resources/classes.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="510" column="5" selection-start="8908" selection-end="8908" vertical-scroll-proportion="3.264574" vertical-offset="0" max-vertical-offset="1612">
-          <folding>
-            <element signature="n#!!block;n#Resource#0" expanded="false" />
-            <element signature="e#223#808#1" expanded="false" />
-            <element signature="e#360#699#0" expanded="false" />
-            <element signature="e#424#631#0" expanded="false" />
-            <element signature="e#484#623#0" expanded="false" />
-            <element signature="e#658#693#0" expanded="false" />
-            <element signature="e#842#864#1" expanded="false" />
-            <element signature="n#!!block;n#Skill#0" expanded="false" />
-            <element signature="e#1180#1301#1" expanded="false" />
-            <element signature="e#1238#1271#0" expanded="false" />
-            <element signature="e#1403#1668#1" expanded="false" />
-            <element signature="e#1437#1664#0" expanded="false" />
-            <element signature="e#1469#1592#0" expanded="false" />
-            <element signature="e#1541#1583#0" expanded="false" />
-            <element signature="e#1622#1658#0" expanded="false" />
-            <element signature="e#1733#2066#1" expanded="false" />
-            <element signature="e#1813#2022#0" expanded="false" />
-            <element signature="e#2116#2155#1" expanded="false" />
-            <element signature="e#2184#2215#1" expanded="false" />
-            <element signature="e#2234#2259#1" expanded="false" />
-            <element signature="n#!!block;n#Class#0" expanded="false" />
-            <element signature="e#2931#2963#1" expanded="false" />
-            <element signature="e#3024#3113#1" expanded="false" />
-            <element signature="e#3051#3081#0" expanded="false" />
-            <element signature="e#3132#3158#1" expanded="false" />
-            <element signature="n#!!block;n#Armor#0" expanded="false" />
-            <element signature="e#3534#3564#1" expanded="false" />
-            <element signature="e#3579#3603#1" expanded="false" />
-            <element signature="n#!!block;n#Mail#0" expanded="false" />
-            <element signature="e#3794#3831#1" expanded="false" />
-            <element signature="e#3883#3915#1" expanded="false" />
-            <element signature="n#!!block;n#Shield#0" expanded="false" />
-            <element signature="e#4114#4153#1" expanded="false" />
-            <element signature="e#4205#4237#1" expanded="false" />
-            <element signature="n#!!block;n#Weapon#0" expanded="false" />
-            <element signature="e#4528#4560#1" expanded="false" />
-            <element signature="e#4575#4601#1" expanded="false" />
-            <element signature="n#!!block;n#Deity#0" expanded="false" />
-            <element signature="e#4849#4881#1" expanded="false" />
-            <element signature="e#4940#4985#1" expanded="false" />
-            <element signature="e#5048#5096#1" expanded="false" />
-            <element signature="e#5147#5186#1" expanded="false" />
-            <element signature="e#5201#5227#1" expanded="false" />
-            <element signature="n#!!block;n#Domain#0" expanded="false" />
-            <element signature="e#5425#5514#1" expanded="false" />
-            <element signature="e#5452#5482#0" expanded="false" />
-            <element signature="e#5566#5703#1" expanded="false" />
-            <element signature="e#5601#5698#0" expanded="false" />
-            <element signature="e#5644#5692#0" expanded="false" />
-            <element signature="e#5758#5910#1" expanded="false" />
-            <element signature="e#5798#5906#0" expanded="false" />
-            <element signature="e#5845#5898#0" expanded="false" />
-            <element signature="e#5925#5951#1" expanded="false" />
-            <element signature="n#!!block;n#Spell#0" expanded="false" />
-            <element signature="e#6282#6371#1" expanded="false" />
-            <element signature="e#6310#6339#0" expanded="false" />
-            <element signature="e#6430#6659#1" expanded="false" />
-            <element signature="e#6471#6655#0" expanded="false" />
-            <element signature="e#6514#6649#0" expanded="false" />
-            <element signature="e#6674#6699#1" expanded="false" />
-            <element signature="e#7066#7234#1" expanded="false" />
-            <element signature="e#7106#7134#0" expanded="false" />
-            <element signature="e#7165#7204#0" expanded="false" />
-            <element signature="e#7259#7344#1" expanded="false" />
-            <element signature="e#7286#7314#0" expanded="false" />
-            <element signature="e#7403#7632#1" expanded="false" />
-            <element signature="e#7444#7628#0" expanded="false" />
-            <element signature="e#7487#7622#0" expanded="false" />
-            <element signature="e#7687#7912#1" expanded="false" />
-            <element signature="e#7727#7908#0" expanded="false" />
-            <element signature="e#7770#7902#0" expanded="false" />
-            <element signature="e#8927#8951#1" expanded="false" />
-          </folding>
+        <state line="342" column="11" selection-start="13788" selection-end="13788" vertical-scroll-proportion="0.0" vertical-offset="4788" max-vertical-offset="5166">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/dart/dart-sdk/lib/mirrors/mirrors.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="396" column="17" selection-start="14204" selection-end="14204" vertical-scroll-proportion="0.0" vertical-offset="4250" max-vertical-offset="14616">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/mail.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="13" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="2160">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/feats.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="556" column="0" selection-start="29831" selection-end="29940" vertical-scroll-proportion="0.0" vertical-offset="7672" max-vertical-offset="29722">
+        <state line="247" column="8" selection-start="13862" selection-end="13873" vertical-scroll-proportion="0.0" vertical-offset="2675" max-vertical-offset="24912">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/storetest.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="108" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.73766816" vertical-offset="61" max-vertical-offset="507">
+        <state line="52" column="40" selection-start="3105" selection-end="3105" vertical-scroll-proportion="1.3291457" vertical-offset="95" max-vertical-offset="732">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resource.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="468" column="28" selection-start="8431" selection-end="8431" vertical-scroll-proportion="0.33417085" vertical-offset="5483" max-vertical-offset="7224">
           <folding />
         </state>
       </provider>
