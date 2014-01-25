@@ -44,8 +44,7 @@
     Perception:
       1: 2
       10: 4
-    ? "Sense Motive"
-    :
+    Sense Motive:
       1: 2
       10: 4
   summary: "+2 bonus on Perception and Sense Motive checks"
@@ -67,8 +66,7 @@
   description: "You are skilled at working with animals and mounts.<p class=sub><b>Benefit: </b>You get a +2 bonus on all Handle Animal and Ride skill checks. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill. "
   name: Animal Affinity
   skills:
-    ? "Handle Animal"
-    :
+    Handle Animal:
       1: 2
       10: 4
     Ride:
@@ -85,7 +83,7 @@
   prereqs:
     feats:
       - Arcane Armor Training
-      - Medium Armor Proficiency
+      - Armor Proficiency, Medium
     level: 7
   summary: "Reduce your arcane spell failure chance by 20%"
 
@@ -196,13 +194,10 @@
   prereqs:
     feats:
       - Spell Focus
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "Summoned creatures gain +4 Str and Con"
 
 -
@@ -248,13 +243,10 @@
   name: Brew Potion
   prereqs:
     level: 3
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   spell_related: true
   summary: "Create magic potions"
 
@@ -301,13 +293,10 @@
   description: "You are adept at spellcasting when threatened or distracted.<p class=sub><b>Benefit: </b>You get a +4 bonus on concentration checks made to cast a spell or use a spell-like ability when casting on the defensive or while grappled."
   name: Combat Casting
   prereqs:
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "+4 bonus on concentration checks for defensive casting"
 
 -
@@ -353,13 +342,10 @@
   name: Craft Magic Arms and Armor
   prereqs:
     level: 5
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   spell_related: false
   summary: "Create magic armors, shields, and weapons"
 
@@ -372,13 +358,10 @@
   name: Craft Rod
   prereqs:
     level: 9
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "Create magic rods"
 
 -
@@ -390,13 +373,10 @@
   name: Craft Staff
   prereqs:
     level: 11
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "Create magic staves"
 
 -
@@ -408,13 +388,10 @@
   name: Craft Wand
   prereqs:
     level: 5
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "Create magic wands"
 
 -
@@ -425,13 +402,10 @@
   name: Craft Wondrous Item
   prereqs:
     level: 3
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "Create magic wondrous items"
 
 -
@@ -558,12 +532,10 @@
   description: "You have exceptional manual dexterity.<p class=sub><b>Benefit: </b>You get a +2 bonus on Disable Device and Sleight of Hand skill checks. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill."
   name: Deft Hands
   skills:
-    ? "Disable Device"
-    :
+    Disable Device:
       1: 2
       10: 4
-    ? "Sleight of Hand"
-    :
+    Sleight of Hand:
       1: 2
       10: 4
   summary: "+2 bonus on Disable Device and Sleight of Hand checks"
@@ -657,13 +629,10 @@
     - Metamagic
   name: Enlarge Spell
   prereqs:
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "Double spell range"
 
 -
@@ -676,13 +645,10 @@
     - Metamagic
   name: Eschew Materials
   prereqs:
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "Cast spells without material components"
 
 -
@@ -718,13 +684,10 @@
     - Metamagic
   name: Extend Spell
   prereqs:
-    or:
-      -
-        class_features:
-          - Cast Arcane
-      -
-        class_features:
-          - Cast Divine
+    class_features:
+      or:
+        - Cast Arcane
+        - Cast Divine
   summary: "Double spell duration"
 
 -
@@ -1067,7 +1030,7 @@
   prereqs:
     ? "// TODO - // feats"
     :
-      - 
+      -
     base_attack_bonus: 8
   summary: "Double the threat range of one weapon"
 
@@ -1251,13 +1214,10 @@
   name: Improvised Weapon Mastery
   prereqs:
     base_attack_bonus: 8
-    or:
-      -
-        feats:
-          - Catch Off-Guard
-      -
-        feats:
-          - Throw Anything
+    feats:
+      or:
+        - Catch Off-Guard
+        - Throw Anything
   summary: "Make an improvised weapon deadly"
 
 -
@@ -1356,15 +1316,10 @@
   description: "Your superior crafting skills allow you to create simple magic items. <p class=sub><b>Prerequisites: </b>5 ranks in any Craft or Profession skill <p class=sub><b>Benefit: </b>Choose one Craft or Profession skill in which you possess at least 5 ranks. You receive a +2 bonus on your chosen Craft or Profession skill. Ranks in your chosen skill count as your caster level for the purposes of qualifying for the Craft Magic Arms and Armor and Craft Wondrous Item feats. You can create magic items using these feats, substituting your ranks in the chosen skill for your total caster level. You must use the chosen skill for the check to create the item. The DC to create the item still increases for any necessary spell requirements (see the magic item creation rules in Chapter 15). You cannot use this feat to create any spell-trigger or spell-activation item. <p class=sub><b>Normal: </b>Only spellcasters can qualify for the Craft Magic Arms and Armor and Craft Wondrous Item feats."
   name: Master Craftsman
   prereqs:
-    or:
-      -
-        skills:
-          ? "Craft *"
-          : 5
-      -
-        skills:
-          ? "Profession *"
-          : 5
+    skills:
+      or:
+        Craft: 5
+        Profession: 5
   summary: "You can craft magic items without being a spellcaster"
 
 -
@@ -1537,7 +1492,7 @@
     :
       type: Crossbow
     feats:
-      - Weapon Proficiency
+      - Simple Weapon Proficiency
   summary: "Reload crossbow quickly"
 
 -

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4a88b742-0ed0-4a18-bb78-998a41acaa7c" name="Default" comment="yaml-ize spells&#10;">
+    <list default="true" id="4a88b742-0ed0-4a18-bb78-998a41acaa7c" name="Default" comment="load related-data on feats&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/feat.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ability.dart" afterPath="$PROJECT_DIR$/src/ability.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/alignment.dart" afterPath="$PROJECT_DIR$/src/alignment.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/character.dart" afterPath="$PROJECT_DIR$/src/character.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common.dart" afterPath="$PROJECT_DIR$/src/common.dart" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/commontest.dart" afterPath="$PROJECT_DIR$/test/commontest.dart" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/feats.yaml" afterPath="$PROJECT_DIR$/src/resources/feats.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resource.dart" afterPath="$PROJECT_DIR$/src/resource.dart" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/storetest.dart" afterPath="$PROJECT_DIR$/test/storetest.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/resourcetest.dart" afterPath="$PROJECT_DIR$/test/resourcetest.dart" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store.dart" afterPath="$PROJECT_DIR$/src/store.dart" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestFirst.iws" />
@@ -28,13 +35,13 @@
     <favorites_list name="TestFirst" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46979865">
+    <splitter split-orientation="horizontal" split-proportion="0.34313726">
       <split-first>
         <leaf>
-          <file leaf-file-name="common.dart" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/common.dart">
+          <file leaf-file-name="commontest.dart" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/commontest.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="16" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="792">
+                <state line="77" column="26" selection-start="2925" selection-end="2925" vertical-scroll-proportion="0.0" vertical-offset="1078" max-vertical-offset="1288">
                   <folding />
                 </state>
               </provider>
@@ -43,7 +50,7 @@
           <file leaf-file-name="store.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/store.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="98" column="3" selection-start="2494" selection-end="2494" vertical-scroll-proportion="0.0" vertical-offset="1176" max-vertical-offset="1320">
+                <state line="8" column="0" selection-start="212" selection-end="244" vertical-scroll-proportion="0.0" vertical-offset="112" max-vertical-offset="1540">
                   <folding />
                 </state>
               </provider>
@@ -52,16 +59,25 @@
           <file leaf-file-name="skills.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/skills.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="267" column="3" selection-start="84469" selection-end="84469" vertical-scroll-proportion="0.0" vertical-offset="3204" max-vertical-offset="5172">
+                <state line="267" column="3" selection-start="84469" selection-end="84469" vertical-scroll-proportion="0.0" vertical-offset="3738" max-vertical-offset="6034">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="resource.dart" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="resource.dart" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/resource.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="468" column="28" selection-start="8431" selection-end="8431" vertical-scroll-proportion="0.33417085" vertical-offset="5483" max-vertical-offset="7224">
+                <state line="15" column="17" selection-start="275" selection-end="275" vertical-scroll-proportion="0.237691" vertical-offset="70" max-vertical-offset="6580">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="feat.dart" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/feat.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="279" column="43" selection-start="5887" selection-end="5887" vertical-scroll-proportion="0.0" vertical-offset="3415" max-vertical-offset="4004">
                   <folding />
                 </state>
               </provider>
@@ -70,7 +86,7 @@
           <file leaf-file-name="mirrors.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file:///Applications/dart/dart-sdk/lib/mirrors/mirrors.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="396" column="17" selection-start="14204" selection-end="14204" vertical-scroll-proportion="0.0" vertical-offset="4250" max-vertical-offset="14616">
+                <state line="402" column="4" selection-start="14411" selection-end="14411" vertical-scroll-proportion="0.0" vertical-offset="5628" max-vertical-offset="17122">
                   <folding />
                 </state>
               </provider>
@@ -79,7 +95,7 @@
           <file leaf-file-name="alignment.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/alignment.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="31" column="54" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="588">
+                <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="686">
                   <folding />
                 </state>
               </provider>
@@ -88,7 +104,7 @@
           <file leaf-file-name="pubspec.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pubspec.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="144">
+                <state line="6" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="168">
                   <folding />
                 </state>
               </provider>
@@ -98,10 +114,28 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="storetest.dart" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="storetest.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/storetest.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="52" column="40" selection-start="3105" selection-end="3105" vertical-scroll-proportion="1.3291457" vertical-offset="95" max-vertical-offset="732">
+                <state line="29" column="4" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0" vertical-offset="406" max-vertical-offset="854">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="resourcetest.dart" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/resourcetest.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="153" column="0" selection-start="4649" selection-end="4982" vertical-scroll-proportion="0.9049236" vertical-offset="1609" max-vertical-offset="2254">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="character.dart" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/character.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="2" column="23" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
                   <folding />
                 </state>
               </provider>
@@ -110,7 +144,7 @@
           <file leaf-file-name="mail.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/mail.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="45" column="13" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="2160">
+                <state line="45" column="13" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2520">
                   <folding />
                 </state>
               </provider>
@@ -119,7 +153,7 @@
           <file leaf-file-name="feats.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/feats.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="247" column="8" selection-start="13862" selection-end="13873" vertical-scroll-proportion="0.0" vertical-offset="2675" max-vertical-offset="24912">
+                <state line="1340" column="0" selection-start="90429" selection-end="90463" vertical-scroll-proportion="0.0" vertical-offset="18760" max-vertical-offset="28434">
                   <folding />
                 </state>
               </provider>
@@ -128,7 +162,7 @@
           <file leaf-file-name="classes.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/classes.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="342" column="11" selection-start="13788" selection-end="13788" vertical-scroll-proportion="0.0" vertical-offset="4104" max-vertical-offset="4428">
+                <state line="342" column="11" selection-start="13788" selection-end="13788" vertical-scroll-proportion="0.0" vertical-offset="4788" max-vertical-offset="5166">
                   <folding />
                 </state>
               </provider>
@@ -137,7 +171,7 @@
           <file leaf-file-name="deities.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/deities.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="277" column="21" selection-start="3832" selection-end="3832" vertical-scroll-proportion="0.0" vertical-offset="3324" max-vertical-offset="3780">
+                <state line="277" column="21" selection-start="3832" selection-end="3832" vertical-scroll-proportion="0.0" vertical-offset="3878" max-vertical-offset="4410">
                   <folding />
                 </state>
               </provider>
@@ -146,7 +180,7 @@
           <file leaf-file-name="ability.dart" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ability.dart">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="3" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="480">
+                <state line="19" column="5" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
                   <folding />
                 </state>
               </provider>
@@ -155,7 +189,7 @@
           <file leaf-file-name="weapons.yaml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/resources/weapons.yaml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="768" column="14" selection-start="11569" selection-end="11569" vertical-scroll-proportion="0.0" vertical-offset="9216" max-vertical-offset="9300">
+                <state line="768" column="14" selection-start="11569" selection-end="11569" vertical-scroll-proportion="0.0" vertical-offset="10752" max-vertical-offset="10850">
                   <folding />
                 </state>
               </provider>
@@ -182,30 +216,31 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/test/quicksort.dart" />
-        <option value="$PROJECT_DIR$/test/commontest.dart" />
         <option value="$PROJECT_DIR$/src/resources/skills.yaml" />
         <option value="$PROJECT_DIR$/src/resources/skills-small.yaml" />
-        <option value="$PROJECT_DIR$/test/resourcetest.dart" />
-        <option value="$PROJECT_DIR$/src/common.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/src/resources/mail.yaml" />
         <option value="$PROJECT_DIR$/src/resources/shields.yaml" />
         <option value="$PROJECT_DIR$/src/resources/weapons.yaml" />
-        <option value="$PROJECT_DIR$/src/alignment.dart" />
         <option value="$PROJECT_DIR$/src/resources/deities.yaml" />
-        <option value="$PROJECT_DIR$/src/ability.dart" />
         <option value="$PROJECT_DIR$/src/store.dart" />
-        <option value="$PROJECT_DIR$/src/feat.dart" />
-        <option value="$PROJECT_DIR$/src/resources/feats.yaml" />
         <option value="$PROJECT_DIR$/test/storetest.dart" />
+        <option value="$PROJECT_DIR$/src/common.dart" />
+        <option value="$PROJECT_DIR$/test/commontest.dart" />
+        <option value="$PROJECT_DIR$/src/resources/feats.yaml" />
+        <option value="$PROJECT_DIR$/src/ability.dart" />
+        <option value="$PROJECT_DIR$/src/alignment.dart" />
+        <option value="$PROJECT_DIR$/src/character.dart" />
         <option value="$PROJECT_DIR$/src/resource.dart" />
+        <option value="$PROJECT_DIR$/src/feat.dart" />
+        <option value="$PROJECT_DIR$/test/resourcetest.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1362" />
-    <option name="height" value="746" />
+    <option name="width" value="1680" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -215,7 +250,13 @@
             <id />
           </State>
           <State>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
             <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CSS</id>
           </State>
           <State>
             <id>Control flow issuesJavaScript</id>
@@ -261,7 +302,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -272,7 +313,43 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="charmgr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="charmgr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="charmgr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="charmgr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="charmgr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
@@ -280,7 +357,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="editor.preferences.tabs" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
@@ -291,7 +368,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="LayoutCode.rearrangeEntriesDart" value="false" />
   </component>
-  <component name="RunManager" selected="Dart Command Line Application.storetest.dart">
+  <component name="RunManager" selected="Dart Command Line Application.resourcetest.dart">
     <configuration default="false" name="Test: quicksort.dart" type="DartUnitRunConfigurationType" factoryName="DartUnit" temporary="true">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -326,8 +403,10 @@
       <option name="showConsoleOnStdOut" value="false" />
       <RunnerSettings RunnerId="Basic" />
       <RunnerSettings RunnerId="DartCommandLineDebugRunner" />
+      <RunnerSettings RunnerId="DartCommandLineRunner" />
       <ConfigurationWrapper RunnerId="Basic" />
       <ConfigurationWrapper RunnerId="DartCommandLineDebugRunner" />
+      <ConfigurationWrapper RunnerId="DartCommandLineRunner" />
       <method />
     </configuration>
     <configuration default="false" name="resourcetest.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true">
@@ -356,6 +435,14 @@
       <ConfigurationWrapper RunnerId="DartCommandLineRunner" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" value="$PROJECT_DIR$/test/resourcetest.dart" />
+      <option name="scope" value="METHOD" />
+      <option name="testName" value="prereqs - 1 type with OR" />
+      <method />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -366,23 +453,15 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" value="$PROJECT_DIR$/test/storetest.dart" />
-      <option name="scope" value="METHOD" />
-      <option name="testName" value="load" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -401,9 +480,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Dart Command Line Application.storetest.dart" />
-        <item index="1" class="java.lang.String" itemvalue="Dart Command Line Application.resourcetest.dart" />
-        <item index="2" class="java.lang.String" itemvalue="Dart Command Line Application.commontest.dart" />
+        <item index="0" class="java.lang.String" itemvalue="Dart Command Line Application.resourcetest.dart" />
+        <item index="1" class="java.lang.String" itemvalue="Dart Command Line Application.commontest.dart" />
+        <item index="2" class="java.lang.String" itemvalue="Dart Command Line Application.storetest.dart" />
         <item index="3" class="java.lang.String" itemvalue="DartUnit.Test: quicksort.dart" />
         <item index="4" class="java.lang.String" itemvalue="Dart Command Line Application.quicksort.dart" />
       </list>
@@ -450,50 +529,75 @@
       <created>1389807063258</created>
       <updated>1389807063258</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="load related-data on feats">
+      <created>1390354330539</created>
+      <updated>1390354330540</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1362" height="746" extended-state="6" />
+    <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32874617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32721713" sideWeight="0.49962714" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24832214" sideWeight="0.6741214" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20072332" sideWeight="0.6741214" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3958641" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33180428" sideWeight="0.5003728" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33180428" sideWeight="0.49962714" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3262195" sideWeight="0.5003728" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.49962714" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32721713" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3277439" sideWeight="0.49962714" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32874617" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39776358" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3958641" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3277439" sideWeight="0.5003728" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32721713" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24906786" sideWeight="0.6741214" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24832214" sideWeight="0.6741214" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32415903" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33180428" sideWeight="0.49962714" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -511,28 +615,15 @@
     <MESSAGE value="skill data transformation" />
     <MESSAGE value="more static data loading" />
     <MESSAGE value="more static data loading&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="more static data loading&#10;" />
+    <MESSAGE value="load related-data on feats" />
+    <option name="LAST_COMMIT_MESSAGE" value="load related-data on feats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/alignment.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="27" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0" vertical-offset="322" max-vertical-offset="686">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="26" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="168">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/storetest.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="14" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="448">
@@ -739,54 +830,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/commontest.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="1" selection-start="3038" selection-end="3038" vertical-scroll-proportion="0.0" vertical-offset="981" max-vertical-offset="1395" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/resourcetest.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="27" selection-start="133" selection-end="133" vertical-scroll-proportion="0.13895781" vertical-offset="0" max-vertical-offset="686" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="180">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/shields.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="40" selection-start="86" selection-end="86" vertical-scroll-proportion="0.19390582" vertical-offset="0" max-vertical-offset="994" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="924">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/deities.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="277" column="21" selection-start="3832" selection-end="3832" vertical-scroll-proportion="0.0" vertical-offset="4155" max-vertical-offset="4725">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ability.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="3" selection-start="1215" selection-end="1215" vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="560">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/weapons.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="768" column="14" selection-start="11569" selection-end="11569" vertical-scroll-proportion="0.0" vertical-offset="9131" max-vertical-offset="10850">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/skills.yaml">
@@ -796,16 +842,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/alignment.dart">
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="54" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0" vertical-offset="227" max-vertical-offset="686">
+        <state line="6" column="0" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="180">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store.dart">
+    <entry file="file://$PROJECT_DIR$/test/storetest.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="3" selection-start="2494" selection-end="2494" vertical-scroll-proportion="0.0" vertical-offset="1372" max-vertical-offset="1540">
+        <state line="29" column="4" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.0" vertical-offset="332" max-vertical-offset="732">
           <folding />
         </state>
       </provider>
@@ -817,9 +863,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/dart/dart-sdk/lib/mirrors/mirrors.dart">
+    <entry file="file://$PROJECT_DIR$/src/resources/deities.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="396" column="17" selection-start="14204" selection-end="14204" vertical-scroll-proportion="0.0" vertical-offset="4250" max-vertical-offset="14616">
+        <state line="277" column="21" selection-start="3832" selection-end="3832" vertical-scroll-proportion="0.0" vertical-offset="4155" max-vertical-offset="4725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/weapons.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="768" column="14" selection-start="11569" selection-end="11569" vertical-scroll-proportion="0.0" vertical-offset="9131" max-vertical-offset="10850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/commontest.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="26" selection-start="2925" selection-end="2925" vertical-scroll-proportion="0.0" vertical-offset="682" max-vertical-offset="1104">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="212" selection-end="244" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
           <folding />
         </state>
       </provider>
@@ -831,23 +898,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/feats.yaml">
+    <entry file="file:///Applications/dart/dart-sdk/lib/mirrors/mirrors.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="247" column="8" selection-start="13862" selection-end="13873" vertical-scroll-proportion="0.0" vertical-offset="2675" max-vertical-offset="24912">
+        <state line="402" column="4" selection-start="14411" selection-end="14411" vertical-scroll-proportion="0.0" vertical-offset="4322" max-vertical-offset="14676">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/storetest.dart">
+    <entry file="file://$PROJECT_DIR$/src/resources/feats.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="40" selection-start="3105" selection-end="3105" vertical-scroll-proportion="1.3291457" vertical-offset="95" max-vertical-offset="732">
+        <state line="1340" column="0" selection-start="90429" selection-end="90463" vertical-scroll-proportion="0.0" vertical-offset="15741" max-vertical-offset="24372">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/alignment.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="17" selection-start="17" selection-end="17" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="686">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ability.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="5" selection-start="651" selection-end="651" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/character.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="23" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="1427" selection-end="1427" vertical-scroll-proportion="0.5008489" vertical-offset="713" max-vertical-offset="1302">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/feat.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="279" column="43" selection-start="5887" selection-end="5887" vertical-scroll-proportion="0.0" vertical-offset="3415" max-vertical-offset="4004">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resource.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="468" column="28" selection-start="8431" selection-end="8431" vertical-scroll-proportion="0.33417085" vertical-offset="5483" max-vertical-offset="7224">
+        <state line="15" column="17" selection-start="275" selection-end="275" vertical-scroll-proportion="0.237691" vertical-offset="70" max-vertical-offset="6580">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/resourcetest.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="0" selection-start="4649" selection-end="4982" vertical-scroll-proportion="0.9049236" vertical-offset="1609" max-vertical-offset="2254">
           <folding />
         </state>
       </provider>

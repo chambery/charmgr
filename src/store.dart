@@ -64,7 +64,7 @@ Map load()
   {
     new Spell.map(spell);
   }
-  
+
   Map clazzes = Class.get();
   Map spellss = Spell.get();
   for(Class clazz in clazzes.values)
@@ -75,7 +75,7 @@ Map load()
       if(class_level != null)
       {
         clazz.spells[class_level].add(spell);
-        print('\tadding ${spell} to ${clazz} at level ${class_level + 1}');
+//        print('\tadding ${spell} to ${clazz} at level ${class_level + 1}');
       }
     }
   }

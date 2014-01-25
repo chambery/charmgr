@@ -46,7 +46,7 @@ int calc_max_dex_bonus(List<Armor> char_armor)
 
 int calc_ranks(int char_skill_points, skill, classes) {
     bool class_skill = is_class_skill(skill, classes);
-    double multiplier = (class_skill ? 1.0 : .5);             
+    double multiplier = (class_skill ? 1.0 : .5);
     return (multiplier * char_skill_points).round();
 }
 
@@ -57,4 +57,32 @@ bool is_class_skill(Skill skill, List<Class> classes) {
         }
     }
     return false;
+}
+
+class TreeNode extends Iterable<TreeNode>
+{
+  Feat feat;
+  Set<TreeNode> children;
+
+  TreeNode(this.feat)
+  {
+    children = new Set<TreeNode>();
+  }
+
+  bool addChild(TreeNode n) => children.add(n);
+
+  boolremoveChild(TreeNode n)
+  {
+    return children.remove(n);
+  }
+
+  get iterator
+  {
+    return children.iterator;
+  }
+
+  toString()
+  {
+    return feat.toString();
+  }
 }

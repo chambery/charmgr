@@ -1,8 +1,17 @@
 library resource;
 
-import 'ability.dart';
-import 'alignment.dart';
+import 'character.dart';
 import 'dart:mirrors';
+
+part 'feat.dart';
+part 'ability.dart';
+part 'alignment.dart';
+
+Map translations = {
+ 'abilities' :  new Symbol('Ability'),
+ 'feats' : new Symbol('Feat'),
+ 'skills' : new Symbol('Skill')
+};
 
 class RelatedData
 {
@@ -14,7 +23,7 @@ class RelatedData
     MirrorSystem mirrors = currentMirrorSystem();
     LibraryMirror lm = mirrors.findLibrary(new Symbol('resource'));
     type = lm.declarations[new Symbol(map['type'])];
-    print('\t\trelated_data: ${this.type.reflectedType}');
+//    print('\t\trelated_data: ${this.type.reflectedType}');
 
 //    for(var key in map['filter'].keys)
 //    {
@@ -37,6 +46,7 @@ abstract class Resource
   Resource.map(Map data)
   {
     ObjectMirror o;
+    ClassMirror c = reflectClass(runtimeType);
 
     if(this._getDb()[data['name']] != null)
     {
@@ -47,7 +57,6 @@ abstract class Resource
       o = reflect(this);
     }
 
-    ClassMirror c = reflectClass(runtimeType);
     while(c != null && c.simpleName != #Object)
     {
 //      print('${c}');
@@ -69,7 +78,7 @@ abstract class Resource
       this._getDb()[name] = this;
     }
 
-    print('\t${this._getDb()[data['name']].name} - end constructor');
+//    print('\t${this._getDb()[data['name']].name} - end constructor');
   }
 
   Map _getDb();
@@ -122,7 +131,7 @@ class Skill extends Resource
 //    print('processing subskills');
     for(Map subSkillData in subskills)
     {
-      print('\t\t${subSkillData}');
+//      print('\t\t${subSkillData}');
       Skill subskill = new Skill.map(subSkillData);
       subskill.parent = this;
       _subtypes[subskill.name] = subskill;
@@ -453,145 +462,3 @@ class ClassFeature
 
 }
 
-class Feat extends Resource
-{
-  static Map<String, Feat> _feats = {};
-  String cmb;
-  Set<String> groups;
-  Map<Skill, Map> _skills = {};
-  Map _prereqs = {};
-  String summary;
-  var mobility;
-  bool conditional;
-  Map<Class, int> _classes = {};
-  RelatedData _relatedData;
-  Set<Goodness> _goodness;
-  bool spell_related = false;
-
-  Feat.map(map) : super.map(map);
-
-  Feat(name, description) : super(name, description);
-
-  static put([feat])
-  {
-    if(feat is Map<String, Feat>)
-    {
-      _feats = feat;
-    }
-    else if(feat is Feat)
-    {
-      _feats[feat.name] = feat;
-    }
-
-    return _feats[feat];
-  }
-
-  static get([feat])
-  {
-    if(feat == null)
-    {
-      return _feats;
-    }
-
-    return _feats[feat];
-  }
-
-  get classes => _classes;
-  set classes(Map classes)
-  {
-    for(var clazz in classes.keys)
-    {
-      _classes[Class.get(clazz)] = classes[clazz];
-//      print('\t\t\tmapping ${Class.get(clazz)} :: ${classes[clazz]}');
-    }
-  }
-
-  get skills => _skills;
-  set skills(Map skills)
-  {
-    for(var skill in skills.keys)
-    {
-      _skills[Skill.get(skill)] = skills[skill];
-    }
-  }
-
-  get related_data => _relatedData;
-  set related_data(map)
-  {
-    print('\t\trelated_data: ${map}');
-    _relatedData = new RelatedData(map);
-
-  }
-
-  get prereqs => _prereqs;
-  set prereqs(Map prereqs)
-  {
-    for(var prereq in prereqs.keys)
-    {
-
-      if(prereq == 'feats')
-      {
-        _prereqs['feats'] = [];
-        /* feats : - Improved Overrun */
-        for(var feat in prereqs['feats'])
-        {
-          _prereqs['feats'].add(Feat.get(feat));
-        }
-      }
-
-      else if(prereq == 'abilities')
-      {
-        _prereqs['abilities'] = {};
-        /* abilities:  Dex:  13 */
-        for(var ability in prereqs['abilities'].keys)
-        {
-          _prereqs['abilities'][Ability.get(ability)] = prereqs['abilities'][ability];
-        }
-      }
-
-      else if(prereq == 'level')
-      {
-        _prereqs['level'] = prereqs['level'];
-      }
-
-      else if(prereq == 'base_attack_bonus')
-      {
-        _prereqs['base_attack_bonus'] = prereqs['base_attack_bonus'];
-      }
-
-      else if(prereq == 'multi')
-      {
-        _prereqs['multi'] = [];
-        for(var multi in prereqs['multi'])
-        {
-	        _prereqs['multi'].add(prereqs['multi']);
-        }
-      }
-
-      else if(prereq == 'class_features')
-      {
-        _prereqs['class_features'] = [];
-        for(var feature in prereqs[prereq])
-        {
-          // TODO - add features to the class
-          _prereqs['class_features'].add(feature);
-        }
-      }
-    }
-  }
-
-  get goodness => _goodness;
-  set goodness(goodnesses)
-  {
-    for(var goodness in goodnesses)
-    {
-      _goodness.add(Goodness.get(goodness));
-    }
-  }
-
-  _getDb()
-  {
-    return _feats;
-  }
-
-}

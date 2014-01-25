@@ -1,4 +1,4 @@
-library ability;
+part of resource;
 
 class Ability
 {

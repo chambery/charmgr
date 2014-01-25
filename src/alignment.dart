@@ -1,4 +1,4 @@
-library alignment;
+part of resource;
 
 class Alignment
 {
