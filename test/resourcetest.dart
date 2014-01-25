@@ -66,12 +66,12 @@ void main() {
         Feat.get('Shatter Defenses')
     ];
 
-//    expect(deadlyStroke.meetsPrereqs(char), isTrue);
+    expect(deadlyStroke.meetsPrereqs(char), isTrue);
     char.feats.remove(Feat.get('Greater Weapon Focus'));
-//    expect(deadlyStroke.meetsPrereqs(char), isFalse);
+    expect(deadlyStroke.meetsPrereqs(char), isFalse);
     char.feats.add(Feat.get('Greater Weapon Focus'));
     char.base_attack_bonus = [10, 5];
-//    expect(deadlyStroke.meetsPrereqs(char), isFalse);
+    expect(deadlyStroke.meetsPrereqs(char), isFalse);
 
   });
 
@@ -156,5 +156,46 @@ feats:
 
   });
 
+  test('feats - test meets prereq', () {
+    load();
+    Character char = new Character();
+    char.abilities =
+    {
+        Ability.STRENGTH : 12,
+        Ability.INTELLIGENCE : 12,
+        Ability.DEXTERITY : 12,
+        Ability.CONSTITUTION : 12,
+        Ability.WISDOM : 12,
+        Ability.CHARISMA : 12
+    };
+    char.base_attack_bonus = [11, 4];
+    char.feats =
+    [
+        Feat.get('Weapon Focus')
+    ];
+    char.classes[Class.get('Fighter')] = 12;
+    Feat penetratingStrike = Feat.get('Penetrating Strike');
+    
+    expect(penetratingStrike.meetsPrereqs(char), isTrue);
+    char.classes[Class.get('Fighter')] = 11;
+    print('\tchar classes: ${char.classes}');
+    expect(penetratingStrike.meetsPrereqs(char), isFalse);
+    char.classes[Class.get('Fighter')] = 12;
+    char.feats.remove(Feat.get('Weapon Focus'));    
+    expect(penetratingStrike.meetsPrereqs(char), isFalse);
 
+    Feat shotOnTheRun = Feat.get('Shot on the Run');
+    expect(shotOnTheRun.meetsPrereqs(char), isFalse);
+    char.feats.add(Feat.get('Point-Blank Shot'));
+    expect(shotOnTheRun.meetsPrereqs(char), isFalse);
+    char.feats.add(Feat.get('Mobility'));
+    expect(shotOnTheRun.meetsPrereqs(char), isFalse);
+    char.base_attack_bonus = [3];
+    expect(shotOnTheRun.meetsPrereqs(char), isFalse);
+    char.base_attack_bonus = [4];
+    expect(shotOnTheRun.meetsPrereqs(char), isFalse);
+    char.abilities[Ability.DEXTERITY] = 15;
+    expect(shotOnTheRun.meetsPrereqs(char), isTrue);
+
+  });
 }
