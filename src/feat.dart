@@ -7,20 +7,22 @@ class Feat extends Resource
   static final Symbol SimplePrereq = new Symbol('SimplePrereq');
   static Map<String, Symbol> mappings = {
       'skills' : Feat.MapPrereq,
-//      'classes' : Feat.MapPrereq,
+      'classes' : Feat.MapPrereq,
       'abilities' : Feat.MapPrereq,
-      'feats' : Feat.ListPrereq
-//      'class_features' : Feat.ListPrereq,
-//      'base_attack_bonus' : Feat.SymbolPrereq,
-//      'level' : Feat.SymbolPrereq
+      'feats' : Feat.ListPrereq,
+      'class_features' : Feat.ListPrereq,
+      'base_attack_bonus' : Feat.SimplePrereq,
+      'goodness' : Feat.ListPrereq,
+      'level' : Feat.SimplePrereq
   };
 
   static Map<String, Feat> _feats = {};
+  static LibraryMirror lm = currentMirrorSystem().findLibrary(new Symbol('resource'));
 
   String cmb;
   List<String> groups;
   Map<Skill, Map> _skills = {};
-  Map _prereqs = {};
+  List _prereqs = [];
   String summary;
   var mobility;
   bool conditional;
@@ -57,58 +59,6 @@ class Feat extends Resource
     return _feats[feat];
   }
 
-  bool meetsPrereqs(Character char)
-  {
-    bool meets = true;
-    for(String prereq in prereqs.keys)
-    {
-      if(prereq.startsWith('abilities'))
-      {
-        for(var ability in prereqs['abilities'])
-        {
-          if(char.abilities[ability] < prereqs['abilities'])
-          {
-            return false;
-          }
-        }
-      }
-
-      else if(prereq.startsWith('feats'))
-      {
-        var key = 'feats';
-        if(prereq.endsWith(':or')) {
-          key = 'feats:or';
-        }
-        for(var feat in prereqs[key])
-        {
-          if(key.endsWith(':or'))
-          {
-            if(char.feats.contains(feat))
-            {
-              break;
-            }
-          }
-          if(!char.feats.contains(feat))
-          {
-            return false;
-          }
-        }
-      }
-      else if(prereq == 'base_attack_bonus')
-      {
-        if(char.base_attack_bonus[0] < prereqs['base_attack_bonus'])
-        {
-          return false;
-        }
-      }
-
-//      ObjectMirror m = reflect(char);
-//      m.getField(new Symbol(prereq)).reflectee;
-
-    }
-    return true;
-  }
-
   get classes => _classes;
   set classes(Map classes)
   {
@@ -142,62 +92,16 @@ class Feat extends Resource
     print('prereqs for: ${name}');
     for(var prereq in prereqs.keys)
     {
-//      if(prereq == 'feats')
-//      {
-//        _prereqs['feats'] = [];
-//        /* feats : - Improved Overrun */
-//        for(var feat in prereqs['feats'])
-//        {
-//          _prereqs['feats'].add(Feat.get(feat));
-//        }
-//      }
-//
-//      else if(prereq == 'abilities')
-//      {
-//        _prereqs['abilities'] = {};
-//        /* abilities:  Dex:  13 */
-//        for(var ability in prereqs['abilities'].keys)
-//        {
-//          _prereqs['abilities'][Ability.get(ability)] = prereqs['abilities'][ability];
-//        }
-//      }
-//
-//      else if(prereq == 'level')
-//      {
-//        _prereqs['level'] = prereqs['level'];
-//      }
-//
-//      else if(prereq == 'base_attack_bonus')
-//      {
-//        _prereqs['base_attack_bonus'] = prereqs['base_attack_bonus'];
-//      }
-//
-//      else if(prereq == 'multi')
-//      {
-//        _prereqs['multi'] = [];
-//        for(var multi in prereqs['multi'])
-//        {
-//          _prereqs['multi'].add(prereqs['multi']);
-//        }
-//      }
-//
-//      else if(prereq == 'class_features')
-//      {
-//        _prereqs['class_features'] = [];
-//        for(var feature in prereqs[prereq])
-//        {
-//          // TODO - add features to the class
-//          _prereqs['class_features'].add(feature);
-//        }
-//      }
-
-//      else if(prereq == 'or')
-//      {
-//        /* run it back through reverse the logic */
-//      }
-//
-
+      print('\t${prereq}');
+      // TODO - handle 'pick' prereq
+      if(prereq != 'pick')
+      {
+        ClassMirror cm = lm.declarations[Feat.mappings[prereq]];
+        InstanceMirror im = cm.newInstance(const Symbol(''), [prereq, prereqs[prereq], lm.declarations[translations[prereq]]]);
+        _prereqs.add(im.reflectee);
+      }
     }
+    print('prereqs for ${name}: ${_prereqs}');
   }
 
   get goodness => _goodness;
@@ -215,21 +119,42 @@ class Feat extends Resource
   }
 }
 
-class Prereq
+abstract class Prereq
 {
   String name;
   var prereqs;
   bool or = false;
-  Prereq(data) {
+  Prereq(name, data) {
+    this.name = name;
     if(data is Map && data.keys.contains('or')) {
       or = true;
       /* attach the 'real' data to the root */
+      print('\t\t\tbefore detach: ${data}');
       var foo = data['or'];
+      print('\t\t\tafter detach: ${foo}');
       data.clear();
-      data.addAll(foo);
+      // TODO - hack b/c we can't repoint data/change its type for subclass constructor
+      if(foo is List)
+      {
+        for(var item in foo)
+        {
+          data[item] = null;
+        }
+      }
+      else
+      {
+        data.addAll(foo);
+      }
+
     }
   }
 
+  bool meets(Character char);
+
+  toString()
+  {
+    return '${name} : ${prereqs}';
+  }
 }
 
 /**
@@ -239,7 +164,7 @@ class MapPrereq extends Prereq
 {
 
   Map<Resource, int> prereqs = {};
-  MapPrereq(map, type) : super(map)
+  MapPrereq(name, map, type) : super(name, map)
   {
     for(var key in map.keys)
     {
@@ -249,6 +174,32 @@ class MapPrereq extends Prereq
     }
     print('\tMapPrereq - ${prereqs}');
   }
+
+  bool meets(Character char)
+  {
+//    var meets = or; // false, say
+    var meets = !or;
+    ObjectMirror o = reflect(char);
+    Map map = o.getField(new Symbol(name)).reflectee;
+    for(var prereq in prereqs.keys)
+    {
+      if(or)
+      {
+        if(map[prereq] == prereqs[prereq])
+        {
+          return true;
+        }
+      }
+      else
+      {
+        if(map[prereq] != prereqs[prereq])
+        {
+          return false;
+        }
+      }
+    }
+    return meets;
+  }
 }
 
 /**
@@ -257,18 +208,59 @@ class MapPrereq extends Prereq
 class ListPrereq extends Prereq
 {
   List<Resource> prereqs = [];
-  ListPrereq(list, type) : super(list)
+  ListPrereq(name, list, type) : super(name, list)
   {
-    print('\tListPrereq - ${type.reflectedType}');
-    for(var item in list)
+    // TODO - we can't change the type in the super constructor
+    if(list is Map)
     {
-
-      var resource = type.invoke(new Symbol('get'), [item]).reflectee;
-      print('\tListPrereq - ${resource}');
-      prereqs.add(resource);
+      list = list.keys;
     }
-    print('\tListPrereq - ${prereqs}');
+    
+    if(name != 'class_features')
+    {
+      print('\tListPrereq - ${name} ${type.reflectedType}');
+      print('\t\t\t${type.reflectedType}');
+      for(var item in list)
+      {
+
+        var resource = type.invoke(new Symbol('get'), [item]).reflectee;
+        print('\tListPrereq - ${resource}');
+        prereqs.add(resource);
+      }
+      print('\tListPrereq - ${prereqs}');
+    }
+    else
+    {
+      print('\n\t\t!!! ${name} CHANNEL FEATURES not implemented: ${list}\n');
+    }
   }
+
+  bool meets(Character char)
+  {
+//    var meets = or; // false, say
+    var meets = !or;
+    ObjectMirror o = reflect(char);
+    List list= o.getField(new Symbol(name)).reflectee;
+    for(var prereq in prereqs)
+    {
+      if(or)
+      {
+        if(list.contains(prereq))
+        {
+          return true;
+        }
+      }
+      else
+      {
+        if(list.contains(prereq))
+        {
+          return false;
+        }
+      }
+    }
+    return meets;
+  }
+
 }
 
 /**
@@ -276,6 +268,14 @@ class ListPrereq extends Prereq
  */
 class SimplePrereq extends Prereq
 {
-  int prereq = 0;
-  SimplePrereq(list, [type]) : super(list);
+  int prereqs = 0;
+  SimplePrereq(name, value, [type]) : super(name, value)
+  {
+    prereqs = value;
+  }
+  
+  bool meets(char) 
+  {
+    return true;
+  }
 }

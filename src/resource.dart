@@ -10,7 +10,10 @@ part 'alignment.dart';
 Map translations = {
  'abilities' :  new Symbol('Ability'),
  'feats' : new Symbol('Feat'),
- 'skills' : new Symbol('Skill')
+ 'skills' : new Symbol('Skill'),
+ 'classes' : new Symbol('Class'),
+ 'alignment' : new Symbol('Alignment'),
+ 'goodness' : new Symbol('Goodness')
 };
 
 class RelatedData

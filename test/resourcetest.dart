@@ -90,7 +90,7 @@ feats:
       print('${prereq} > ${Feat.mappings[prereq]}');
       ClassMirror cm = lm.declarations[Feat.mappings[prereq]];
 
-      InstanceMirror im = cm.newInstance(const Symbol(''), [data[prereq], lm.declarations[translations[prereq]]]);
+      InstanceMirror im = cm.newInstance(const Symbol(''), [prereq, data[prereq], lm.declarations[translations[prereq]]]);
       Prereq p = im.reflectee;
       expect(p.or, isFalse);
     }
@@ -107,7 +107,7 @@ abilities:
     Int: 20
 ''');
       ClassMirror cm = lm.declarations[Feat.mappings['abilities']];
-      InstanceMirror im = cm.newInstance(const Symbol(''), [data['abilities'], lm.declarations[translations['abilities']]]);
+      InstanceMirror im = cm.newInstance(const Symbol(''), ['abilities', data['abilities'], lm.declarations[translations['abilities']]]);
       Prereq p = im.reflectee;
       expect(p.or, isTrue);
       expect(p.prereqs[Ability.get('Dex')], 15);
@@ -127,12 +127,12 @@ abilities:
   or:
     Dex: 15
 feats:
-  - Gorgon\\'s Fist
+  - "Gorgon's Fist"
 ''');
     var prereq = 'skills';
     print('${prereq} > ${Feat.mappings[prereq]}');
     ClassMirror cm = lm.declarations[Feat.mappings[prereq]];
-    InstanceMirror im = cm.newInstance(const Symbol(''), [data[prereq], lm.declarations[translations[prereq]]]);
+    InstanceMirror im = cm.newInstance(const Symbol(''), [prereq, data[prereq], lm.declarations[translations[prereq]]]);
     Prereq p = im.reflectee;
     expect(p.or, isTrue);
     expect(p.prereqs[Skill.get('Craft')], 5);
@@ -141,7 +141,7 @@ feats:
     prereq = 'abilities';
     print('${prereq} > ${Feat.mappings[prereq]}');
     cm = lm.declarations[Feat.mappings[prereq]];
-    im = cm.newInstance(const Symbol(''), [data[prereq], lm.declarations[translations[prereq]]]);
+    im = cm.newInstance(const Symbol(''), [prereq, data[prereq], lm.declarations[translations[prereq]]]);
     p = im.reflectee;
     expect(p.or, isTrue);
     expect(p.prereqs[Ability.get('Dex')], 15);
@@ -149,10 +149,12 @@ feats:
     prereq = 'feats';
     print('${prereq} > ${Feat.mappings[prereq]}');
     cm = lm.declarations[Feat.mappings[prereq]];
-    im = cm.newInstance(const Symbol(''), [data[prereq], lm.declarations[translations[prereq]]]);
+    im = cm.newInstance(const Symbol(''), [prereq, data[prereq], lm.declarations[translations[prereq]]]);
     p = im.reflectee;
     expect(p.or, isFalse);
-    expect(p.prereqs.contains(Feat.get('Gorgon\'s Fist')), isTrue);
+    expect(p.prereqs.contains(Feat.get("Gorgon's Fist")), isTrue);
 
   });
+
+
 }
