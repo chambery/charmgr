@@ -3,7 +3,6 @@ library commontest;
 import 'package:unittest/unittest.dart';
 import 'package:unittest/vm_config.dart';
 import '../src/resource.dart';
-import '../src/ability.dart';
 import '../src/common.dart';
 import 'package:yaml/yaml.dart';
 import 'dart:io';

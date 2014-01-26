@@ -5,6 +5,7 @@ class Feat extends Resource
   static final Symbol MapPrereq = new Symbol('MapPrereq');
   static final Symbol ListPrereq = new Symbol('ListPrereq');
   static final Symbol SimplePrereq = new Symbol('SimplePrereq');
+  static final Symbol PickPrereq = new Symbol('PickPrereq');
   static Map<String, Symbol> mappings = {
       'skills' : Feat.MapPrereq,
       'classes' : Feat.MapPrereq,
@@ -13,14 +14,15 @@ class Feat extends Resource
       'class_features' : Feat.ListPrereq,
       'base_attack_bonus' : Feat.SimplePrereq,
       'goodness' : Feat.ListPrereq,
-      'level' : Feat.SimplePrereq
+      'level' : Feat.SimplePrereq,
+      'pick' : Feat.PickPrereq
   };
-
+  static Map<String, List<Feat>> groupToFeats = {};
   static Map<String, Feat> _feats = {};
   static LibraryMirror lm = currentMirrorSystem().findLibrary(new Symbol('resource'));
 
   String cmb;
-  List<String> groups;
+  List<String> _groups = [];
   Map<Skill, Map> _skills = {};
   List<Prereq> _prereqs = [];
   String summary;
@@ -59,6 +61,19 @@ class Feat extends Resource
     return _feats[feat];
   }
 
+  get groups => _groups;
+  set groups(List groups)
+  {
+    _groups = groups;
+    print('\tbefore ${groupToFeats}');
+    for(var group in groups)
+    {
+      if(groupToFeats[group] == null) groupToFeats[group] = [];
+      groupToFeats[group].add(this);
+    }
+    print('\tafter ${groupToFeats}');
+  }
+
   get classes => _classes;
   set classes(Map classes)
   {
@@ -93,13 +108,9 @@ class Feat extends Resource
     for(var prereq in prereqs.keys)
     {
 //      print('\t${prereq}');
-      // TODO - handle 'pick' prereq
-      if(prereq != 'pick')
-      {
-        ClassMirror cm = lm.declarations[Feat.mappings[prereq]];
-        InstanceMirror im = cm.newInstance(const Symbol(''), [prereq, prereqs[prereq], lm.declarations[translations[prereq]]]);
-        _prereqs.add(im.reflectee);
-      }
+      ClassMirror cm = lm.declarations[Feat.mappings[prereq]];
+      InstanceMirror im = cm.newInstance(const Symbol(''), [prereq, prereqs[prereq], lm.declarations[translations[prereq]]]);
+      _prereqs.add(im.reflectee);
     }
 //    print('prereqs for ${name}: ${_prereqs}');
   }
@@ -306,6 +317,38 @@ class ListPrereq extends Prereq
     return meets;
   }
 
+}
+
+class PickPrereq extends Prereq
+{
+  int count;
+  String group;
+
+  PickPrereq(name, map, [type]) : super(name, map)
+  {
+    this.count = map['count'];
+    this.group = map['group'];
+  }
+
+
+  bool meets(Character char)
+  {
+    print('PickPrereq meets()');
+    int meetsCount = 0;
+    for(var feat in Feat.groupToFeats[group])
+    {
+      if(char.feats.contains(feat))
+      {
+        print('\tfound a match for ${feat}: ${char.feats}');
+        ++meetsCount;
+        if(meetsCount == count)
+        {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 }
 
 /**

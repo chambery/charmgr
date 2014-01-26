@@ -312,7 +312,10 @@ class Weapon extends Resource
   List<String> damageType;
   String type;
 
-  Weapon.map(map) : super.map(map);
+  Weapon.map(map) : super.map(map)
+  {
+
+  }
 
 
   static Weapon get(name)
