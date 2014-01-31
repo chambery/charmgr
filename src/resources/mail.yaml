@@ -139,6 +139,7 @@
   speed30: '-'
   speed20: '-'
   weight: 10
+  category: other
 
 - name: Gauntlet, locked
   cost: 8 gp
@@ -150,6 +151,7 @@
   speed30: '-'
   speed20: '-'
   weight: 5
+  category: other
 
 - name: Shield spikes
   cost: 10 gp
@@ -160,6 +162,7 @@
   speed30: '-'
   speed20: '-'
   weight: 5
+  category: other
 
 - name: Helmet, leather
   cost: 2 gp
@@ -171,4 +174,5 @@
   speed30: '-'
   speed20: '-'
   weight: 1
+  category: other
 

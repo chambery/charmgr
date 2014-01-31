@@ -12,6 +12,9 @@ import 'dart:async';
 import 'package:yaml/yaml.dart';
 import 'dart:mirrors';
 
+MirrorSystem mirrors = currentMirrorSystem();
+LibraryMirror lm = mirrors.findLibrary(new Symbol('resource'));
+
 void main() {
   useVMConfiguration();
 
@@ -67,7 +70,7 @@ void main() {
 //    ];
 //
 //    expect(deadlyStroke.meetsPrereqs(char), isTrue);
-//    char.feats.remove(Feat.get('Greater Weapon Focus'));
+//    char.removeFeat(Feat.get('Greater Weapon Focus'));
 //    expect(deadlyStroke.meetsPrereqs(char), isFalse);
 //    char.feats.add(Feat.get('Greater Weapon Focus'));
 //    char.base_attack_bonus = [10, 5];
@@ -83,8 +86,7 @@ void main() {
 //feats:
 //  - Deflect Arrows
 //''');
-//    MirrorSystem mirrors = currentMirrorSystem();
-//    LibraryMirror lm = mirrors.findLibrary(new Symbol('resource'));
+
 //    for(var prereq in data.keys)
 //    {
 //      print('${prereq} > ${Feat.mappings[prereq]}');
@@ -181,7 +183,7 @@ void main() {
 //    print('\tchar classes: ${char.classes}');
 //    expect(penetratingStrike.meetsPrereqs(char), isFalse);
 //    char.classes[Class.get('Fighter')] = 12;
-//    char.feats.remove(Feat.get('Weapon Focus'));
+//    char.removeFeat(Feat.get('Weapon Focus'));
 //    expect(penetratingStrike.meetsPrereqs(char), isFalse);
 //
 //    Feat shotOnTheRun = Feat.get('Shot on the Run');
@@ -203,21 +205,66 @@ void main() {
     load();
     Feat criticalMastery = Feat.get('Critical Mastery');
     Character char = new Character();
-    char.feats =
-    [
-        Feat.get('Critical Focus'),
-        Feat.get('Exhausting Critical'),
-        Feat.get('Sickening Critical')
-    ];
+
+    char.addFeat(Feat.get('Critical Focus'));
+    char.addFeat(Feat.get('Exhausting Critical'));
+    char.addFeat(Feat.get('Sickening Critical'));
+
     char.classes[Class.get('Fighter')] = 14;
 
     expect(criticalMastery.meetsPrereqs(char), isTrue);
     char.classes[Class.get('Fighter')] = 13;
     expect(criticalMastery.meetsPrereqs(char), isFalse);
     char.classes[Class.get('Fighter')] = 14;
-    char.feats.remove(Feat.get('Sickening Critical'));
+    char.removeFeat(Feat.get('Sickening Critical'));
     expect(criticalMastery.meetsPrereqs(char), isFalse);
 
 
   });
+
+  test('feat multi', () {
+    load();
+    Feat weaponFocus = Feat.get('Greater Weapon Focus');
+    Character char = new Character();
+    char.addFeat(Feat.get('Simple Weapon Proficiency'));
+
+
+//    for(Feat feat in weaponFocus.multi['feats'])
+//    {
+//      /* is a list, eg. feats: - Simple Weapon Proficiency, - Martial... */
+//      var type = lm.declarations[translations[typename]];
+//       getRelatedData(feat);
+//      weaponFocus.multi[typename].intersection(char.feats);
+//      weaponFocus.multi.intersection();
+//    }
+//
+//
+//    char.addFeat(Feat.get('Exotic Weapon Proficiency'));
+//    printRelatedData(weaponFocus, char);
+//    char.removeFeat(Feat.get('Simple Weapon Proficiency'));
+//    printRelatedData(weaponFocus, char);
+  });
+}
+
+printRelatedData(feat, char)
+{
+  for(var typename in feat.multi.keys)
+  {
+    /* is a list, eg. feats: - Simple Weapon Proficiency, - Martial... */
+    var type = lm.declarations[translations[typename]];
+//    feat.multi[typename].intersection()
+  }
+}
+
+getRelatedData(Feat feat)
+{
+  print('${feat.name} : ${feat.related_data != null ? feat.related_data.data : 'NO RELATED DATA'}');
+  if(feat.multi['feats'] != null)
+  {
+    for(var multi in feat.multi['feats'])
+    {
+      print('${multi}');
+      getRelatedData(multi);
+    }
+  }
 }

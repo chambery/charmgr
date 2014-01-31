@@ -1,9 +1,9 @@
 -
+  name: Acrobatic
   _id: bd08
   description: "You are skilled at leaping, jumping, and flying. <p class=sub><b>Benefit: </b>You get a +2 bonus on all Acrobatics and Fly skill checks. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill."
   groups:
     - Combat
-  name: Acrobatic
   skills:
     Acrobatics:
       1: 2
@@ -14,12 +14,12 @@
   summary: "+2 bonus on Acrobatics and Fly checks"
 
 -
+  name: Acrobatic Steps
   _id: ae16
   cmb: ""
   description: "You can easily move over and through obstacles. <b>Prerequisites: </b>Dex 15, Nimble Moves. <b>Benefit: </b>Whenever you move, you may move through up to 15 feet of difficult terrain each round as if it were normal terrain. The effects of this feat stack with those provided by Nimble Moves (allowing you to move normally through a total of 20 feet of difficult terrain each round). "
   groups:
     - Combat
-  name: Acrobatic Steps
   prereqs:
     abilities:
       Dex: 15
@@ -28,18 +28,18 @@
   summary: "Ignore 20 feet of difficult terrain when you move"
 
 -
+  name: Agile Maneuvers
   _id: a364
   cmb: ""
   description: "You've learned to use your quickness in place of brute force when performing combat maneuvers.<p class=sub><b>Benefit: </b>You add your Dexterity bonus to your base attack bonus and size bonus when determining your Combat Maneuver Bonus (see Chapter 8) instead of your Strength bonus. <p class=sub><b>Normal: </b>You add your Strength bonus to your base attack bonus and size bonus when determining your Combat Maneuver Bonus."
   groups:
     - Combat
-  name: Agile Maneuvers
   summary: "Use your Dex bonus when calculating your CMB"
 
 -
+  name: Alertness
   _id: 768a
   description: "You often notice things that others might miss.<p class=sub><b>Benefit: </b>You get a +2 bonus on Perception and Sense Motive skill checks. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill."
-  name: Alertness
   skills:
     Perception:
       1: 2
@@ -50,21 +50,22 @@
   summary: "+2 bonus on Perception and Sense Motive checks"
 
 -
+  name: Alignment Channel
   _id: d93f
   description: "Choose chaos, evil, good, or law. You can channel divine energy to affect outsiders that possess this subtype.<p class=sub><b>Prerequisites: </b>Ability to channel energy.<p class=sub><b>Benefit: </b>Instead of its normal effect, you can choose to have your ability to channel energy heal or harm outsiders of the chosen alignment subtype. You must make this choice each time you channel energy. If you choose to heal or harm creatures of the chosen alignment subtype, your channel energy has no effect on other creatures. The amount of damage healed or dealt and the DC to halve the damage is otherwise unchanged.<p class=sub><b>Special: </b>You can gain this feat multiple times. Its effects do not stack. Each time you take this feat, it applies to a new alignment subtype. Whenever you channel energy, you must choose which type to effect."
-  multi:
-    db: alignments
-    type: alignments
-  name: Alignment Channel
+  # TODO - handle this case
+#  related_data:
+#    db:
+#    type: Alignment
   prereqs:
     class_features:
       - Channel Energy
   summary: "Channel energy can heal or harm outsiders"
 
 -
+  name: Animal Affinity
   _id: "9477"
   description: "You are skilled at working with animals and mounts.<p class=sub><b>Benefit: </b>You get a +2 bonus on all Handle Animal and Ride skill checks. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill. "
-  name: Animal Affinity
   skills:
     Handle Animal:
       1: 2
@@ -75,11 +76,11 @@
   summary: "+2 bonus on Handle Animal and Ride checks"
 
 -
+  name: Arcane Armor Mastery
   _id: 760c
   description: "You have mastered the ability to cast spells while wearing armor.<p class=sub><b>Prerequisites: </b>Arcane Armor Training, Medium Armor Proficiency, caster level 7th<p class=sub><b>Benefit: </b>As a swift action, reduce the arcane spell failure chance due to the armor you are wearing by 20% for any spells you cast this round. This bonus replaces, and does not stack with, the bonus granted by Arcane Armor Training."
   groups:
     - Combat
-  name: Arcane Armor Mastery
   prereqs:
     feats:
       - Arcane Armor Training
@@ -88,11 +89,11 @@
   summary: "Reduce your arcane spell failure chance by 20%"
 
 -
+  name: Arcane Armor Training
   _id: 53db
   description: "You have learned how to cast spells while wearing armor.<p class=sub><b>Prerequisites: </b>Light Armor Proficiency, caster level 3rd<p class=sub><b>Benefit: </b>As a swift action, reduce the arcane spell failure chance due to the armor you are wearing by 10% for any spells you cast this round."
   groups:
     - Combat
-  name: Arcane Armor Training
   prereqs:
     feats:
       - Armor Proficiency, Light
@@ -100,19 +101,20 @@
   summary: "Reduce your arcane spell failure chance by 10%"
 
 -
+  name: Arcane Strike
   _id: f6b4
   arcane: true
   conditional: true
   description: "You draw upon your arcane power to enhance your weapons with magical energy.<p class=sub><b>Prerequisites: </b>Ability to cast arcane spells<p class=sub><b>Benefit: </b>As a swift action, you can imbue your weapons with a fraction of your power. For 1 round, your weapons deal +1 damage and are treated as magic for the purpose of overcoming damage reduction. For every five caster levels you possess, this bonus increases by +1, to a maximum of +5 at 20th level."
   groups:
     - Combat
-  name: Arcane Strike
   prereqs:
     class_features:
       - Cast Arcane
   summary: "+1 damage and weapons are considered magic"
 
 -
+  name: Armor Proficiency, Heavy
   _id: 44c1
   attack: "if(chardata.armors){ for(var i in chardata.armors) { var armor = armors.first({ name: chardata.armors[i].armor_name }); if(armor.category == 'heavy') { attacks.acp += Math.abs(armor.acp) } } } return attacks;"
   classes:
@@ -125,13 +127,13 @@
       category: heavy
   description: "You are skilled at wearing heavy armor.<p class=sub><b>Prerequisites: </b>Armor Proficiency, Medium<p class=sub><b>Benefit: </b>See Armor Proficiency, Light. <p class=sub><b>Normal: </b>See Armor Proficiency, Light. <p class=sub><b>Special: </b>Fighters and paladins automatically have Heavy Armor Proficiency as a bonus feat. They need not select it."
   mobility: "if(chardata.armors){ for(var i in chardata.armors) {   var armor = armors.first({ name: chardata.armors[i].armor_name }); if(armor.category == 'heavy') { acp += Math.abs(armor.acp) } } } return acp; "
-  name: Armor Proficiency, Heavy
   prereqs:
     feats:
       - Armor Proficiency, Medium
   summary: "No penalties on attack rolls while wearing heavy armor"
 
 -
+  name: Armor Proficiency, Light
   _id: ffd4
   attack: "if(chardata.armors){ for(var i in chardata.armors) { var armor = armors.first({ name: chardata.armors[i].armor_name }); if(armor.category == 'light') { attacks.acp += Math.abs(armor.acp) } } } return attacks;"
   classes:
@@ -149,10 +151,10 @@
       category: light
   description: "You are skilled at wearing light armor.<p class=sub><b>Benefit: </b>When you wear a type of armor with which you are proficient, the armor check penalty for that armor applies only to Dexterity- and Strength-based skill checks. <b>Normal: </b>A character who is wearing armor with which he is not proficient applies its armor check penalty to attack rolls and to all skill checks that involve moving. <b>Special: </b>All characters except monks, sorcerers, and wizards automatically have Light Armor Proficiency as a bonus feat. They need not select it."
   mobility: "if(chardata.armors){ for(var i in chardata.armors) {   var armor = armors.first({ name: chardata.armors[i].armor_name }); if(armor.category == 'light') { acp += Math.abs(armor.acp) } } } return acp;"
-  name: Armor Proficiency, Light
   summary: "No penalties on attack rolls while wearing light armor"
 
 -
+  name: Armor Proficiency, Medium
   _id: f286
   attack: "if(chardata.armors){ for(var i in chardata.armors) { var armor = armors.first({ name: chardata.armors[i].armor_name }); if(armor.category == 'medium') { attacks.acp += Math.abs(armor.acp) } } } return attacks; "
   classes:
@@ -167,16 +169,15 @@
       category: medium
   description: "You are skilled at wearing medium armor.<p class=sub><b>Prerequisites: </b>Armor Proficiency, Light<p class=sub><b>Benefit: </b>See Armor Proficiency, Light. <p class=sub><b>Normal: </b>See Armor Proficiency, Light. <p class=sub><b>Special: </b>Fighters, paladins, and rangers automatically have Medium Armor Proficiency as a bonus feat. They need not select it."
   mobility: "if(chardata.armors){ for(var i in chardata.armors) {   var armor = armors.first({ name: chardata.armors[i].armor_name }); if(armor.category == 'medium') { acp += Math.abs(armor.acp) } } } return acp;"
-  name: Armor Proficiency, Medium
   prereqs:
     feats:
       - Armor Proficiency, Light
   summary: "No penalties on attack rolls while wearing medium armor"
 
 -
+  name: Athletic
   _id: 5a9
   description: "You possess inherent physical prowess.<p class=sub><b>Benefit: </b>You get a +2 bonus on Climb and Swim skill checks. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill."
-  name: Athletic
   skills:
     Climb:
       1: 2
@@ -187,10 +188,10 @@
   summary: "+2 bonus on Climb and Swim checks"
 
 -
+  name: Augment Summoning
   _id: 97ff
   conditional: true
   description: "Your summoned creatures are more powerful and robust.<p class=sub><b>Prerequisites: </b>Spell Focus (conjuration)<p class=sub><b>Benefit: </b>Each creature you conjure with any summon spell gains a +4 enhancement bonus to Strength and Constitution for the duration of the spell that summoned it."
-  name: Augment Summoning
   prereqs:
     feats:
       - Spell Focus
@@ -201,13 +202,13 @@
   summary: "Summoned creatures gain +4 Str and Con"
 
 -
+  name: Bleeding Critical
   _id: 960a
   conditional: true
   description: "Your critical hits cause opponents to bleed profusely<p class=sub><b>Prerequisites: </b>Critical Focus, base attack bonus +11. <p class=sub><b>Benefit: </b>Whenever you score a critical hit with a slashing or piercing weapon, your opponent takes 2d6 points of bleed damage (see Appendix 2) each round on his turn, in addition to the damage dealt by the critical hit. Bleed damage can be stopped by a DC 15 Heal skill check or through any magical healing. The effects of this feat stack. <p class=sub><b>Special: </b>You can only apply the effects of one critical feat to a given critical hit unless you possess Critical Mastery."
   groups:
     - Combat
     - Critical
-  name: Bleeding Critical
   prereqs:
     base_attack_bonus: 11
     feats:
@@ -436,6 +437,7 @@
   summary: "Apply two effects to your critical hits"
 
 -
+  name: Dazzling Display
   _id: 85a6
   description: "Your skill with your favored weapon can frighten enemies.<p class=sub><b>Prerequisites: </b>Weapon Focus, proficiency with the selected weapon.<p class=sub><b>Benefit: </b>While wielding the weapon in which you have Weapon Focus, you can perform a bewildering show of prowess as a full-round action. Make an Intimidate check to demoralize all foes within 30 feet who can see your display."
   groups:
@@ -443,8 +445,7 @@
   multi:
     feats:
       - Weapon Focus
-    type: weapons
-  name: Dazzling Display
+    char_filter: true
   prereqs:
     feats:
       - Weapon Focus
@@ -623,11 +624,11 @@
 -
   ? "// TODO - op to modify spell description conditional"
   : true
+  name: Enlarge Spell
   _id: "1835"
   description: "You can increase the range of your spells.<p class=sub><b>Benefit: </b>You can alter a spell with a range of close, medium, or long to increase its range by 100%. An enlarged spell with a range of close now has a range of 50 ft. + 5 ft./ level, while medium-range spells have a range of 200 ft. + 20 ft./level and long-range spells have a range of 800 ft. + 80 ft./level. An enlarged spell uses up a spell slot one level higher than the spell?s actual level.<p class=sub>Spells whose ranges are not defined by distance, as well as spells whose ranges are not close, medium, or long, do not benefit from this feat."
   groups:
     - Metamagic
-  name: Enlarge Spell
   prereqs:
     class_features:
       or:
@@ -636,6 +637,7 @@
   summary: "Double spell range"
 
 -
+  name: Eschew Materials
   _id: 811a
   classes:
     Sorcerer: 1
@@ -643,7 +645,6 @@
   description: "You can cast many spells without needing to utilize minor material components.<p class=sub><b>Benefit: </b>You can cast any spell with a material component costing 1 gp or less without needing that component. The casting of the spell still provokes attacks of opportunity as normal. If the spell requires a material component that costs more than 1 gp, you must have the material component on hand to cast the spell, as normal."
   groups:
     - Metamagic
-  name: Eschew Materials
   prereqs:
     class_features:
       or:
@@ -652,13 +653,13 @@
   summary: "Cast spells without material components"
 
 -
+  name: Exhausting Critical
   _id: da18
   conditional: true
   description: "Your critical hits cause opponents to become exhausted.<p class=sub><b>Prerequisites: </b>Critical Focus, Tiring Critical, base attack bonus +15<p class=sub><b>Benefit: </b>When you score a critical hit on a foe, your target immediately becomes exhausted. This feat has no effect on exhausted creatures. <p class=sub><b>Special: </b>You can only apply the effects of one critical feat to a given critical hit unless you possess the Critical Mastery feat."
   groups:
     - Combat
     - Critical
-  name: Exhausting Critical
   prereqs:
     base_attack_bonus: 15
     feats:
@@ -666,23 +667,28 @@
   summary: "Whenever you score a critical hit, the target is exhausted"
 
 -
+  name: Exotic Weapon Proficiency
   _id: db65
   description: "<p class=sub><b>Prerequisites: </b>Base attack bonus +1<p class=sub><b>Benefit: </b>You make attack rolls with the weapon normally. <p class=sub><b>Normal: </b>A character who uses a weapon with which he is not proficient takes a -1 penalty on attack rolls. <p class=sub><b>Special: </b>You can gain Exotic Weapon Proficiency multiple times. Each time you take the feat, it applies to a new type of exotic weapon."
+  multi:
+    char_filter: false
   groups:
     - Combat
-  name: Exotic Weapon Proficiency
+  related_data:
+    type: Weapon
+    filter:
+      category: exotic
   prereqs:
     base_attack_bonus: 1
   summary: "No penalty on attacks made with one exotic weapon"
 
 -
-  ? "// TODO - op to modify spell description conditional"
-  : true
+  name: Extend Spell
+  # TODO - op to modify spell description conditional"
   _id: fed8
   description: "You can make your spells last twice as long.<p class=sub><b>Benefit: </b>An extended spell lasts twice as long as normal. A spell with a duration of concentration, instantaneous, or permanent is not affected by this feat. An extended spell uses up a spell slot one level higher than the spell?s actual level."
   groups:
     - Metamagic
-  name: Extend Spell
   prereqs:
     class_features:
       or:
@@ -691,40 +697,40 @@
   summary: "Double spell duration"
 
 -
+  name: Extra Channel
   _id: "3029"
   conditional: true
   description: "You can channel divine energy more often.<p class=sub><b>Prerequisites: </b>Channel energy class feature<p class=sub><b>Benefit: </b>You can channel energy two additional times per day. <p class=sub><b>Special: </b>If a paladin with the ability to channel positive energy takes this feat, she can use lay on hands four additional times a day, but only to channel positive energy."
-  name: Extra Channel
   prereqs:
     class_features:
       - Channel Energy
   summary: "Channel energy two additional times per day"
 
 -
+  name: Extra Ki
   _id: 35cd
   conditional: true
   description: "You can use your ki pool more times per day than most.<p class=sub><b>Prerequisites: </b>Ki pool class feature<p class=sub><b>Benefit: </b>Your ki pool increases by 2.<p class=sub><b>Special: </b>You can gain Extra Ki multiple times. Its effects stack."
-  name: Extra Ki
   prereqs:
     class_features:
       - Ki Pool
   summary: "Increase your ki pool by 2 points"
 
 -
+  name: Extra Lay On Hands
   _id: e8a1
   conditional: true
   description: "You can use your lay on hands ability more often.<p class=sub><b>Prerequisites: </b>Lay on hands class feature<p class=sub><b>Benefit: </b>You can use your lay on hands ability two additional times per day.<p class=sub><b>Special: </b>You can gain Extra Lay On Hands multiple times. Its effects stack."
-  name: Extra Lay On Hands
   prereqs:
     class_features:
       - Lay On Hands
   summary: "Use lay on hands two additional times per day"
 
 -
+  name: Extra Mercy
   _id: 1af0
   conditional: true
   description: "You can use your lay on hands ability more often.<p class=sub><b>Prerequisites: </b>Lay on hands class feature, mercy class feature<p class=sub><b>Benefit: </b>Select one additional mercy for which you qualify. When you use lay on hands to heal damage to one target, it also receives the additional effects of this mercy.<p class=sub><b>Special: </b>You can gain this feat multiple times. Its effects do not stack. Each time you take this feat, select a new mercy."
-  name: Extra Mercy
   prereqs:
     class_features:
       - Mercy
@@ -965,7 +971,7 @@
   multi:
     feats:
       - Weapon Focus
-    type: weapons
+    char_filter: true
   name: Greater Weapon Focus
   prereqs:
     classes:
@@ -1148,22 +1154,22 @@
   summary: "Keep your shield bonus when shield bashing"
 
 -
+  name: Improved Sunder
   _id: dff1
   description: "You are skilled at damaging your foes' weapons and armor. <p class=sub><b>Prerequisite: </b>Str 13, Power Attack, base attack bonus +1 <p class=sub><b>Benefit: </b>You do not provoke an attack of opportunity when performing a sunder combat maneuver. In addition, you receive a +2 bonus on checks made to sunder an item. You also receive a +2 bonus to your Combat Maneuver Defense whenever an opponent tries to sunder your gear. <p class=sub><b>Normal: </b>You provoke an attack of opportunity when performing a sunder combat maneuver."
   groups:
     - Combat
-  name: Improved Sunder
   prereqs:
     feats:
       - Power Attack
   summary: "+2 bonus on sunder attempts, no attack of opportunity"
 
 -
+  name: Improved Trip
   _id: 405d
   description: "You are skilled at sending your opponents to the ground. <p class=sub><b>Prerequisite: </b>Int 13, Combat Expertise <p class=sub><b>Benefit: </b>You do not provoke an attack of opportunity when performing a trip combat maneuver. In addition, you receive a +2 bonus on checks made to trip a foe. You also receive a +2 bonus to your Combat Maneuver Defense whenever an opponent tries to trip you. <p class=sub><b>Normal: </b>You provoke an attack of opportunity when performing a trip combat maneuver."
   groups:
     - Combat
-  name: Improved Trip
   prereqs:
     feats:
       - Combat Expertise
@@ -1570,11 +1576,11 @@
   summary: "Hindered foes are flat-footed"
 
 -
+  name: Shield Focus
   _id: "3728"
   description: "You are skilled at deflecting blows with your shield. <p class=sub><b>Prerequisites: </b>Shield Proficiency, base attack bonus +1 <p class=sub><b>Benefit: </b>Increase the AC bonus granted by any shield you are using by 1."
   groups:
     - Combat
-  name: Shield Focus
   prereqs:
     base_attack_bonus: 1
     feats:
@@ -1582,11 +1588,11 @@
   summary: "Gain a +1 bonus to your AC when using a shield"
 
 -
+  name: Shield Master
   _id: 3fde
   description: "Your mastery of the shield allows you to fight with it without hindrance. <p class=sub><b>Prerequisites: </b>Improved Shield Bash, Shield Proficiency, Shield Slam, Two-Weapon Fighting, base attack bonus +11. <p class=sub><b>Benefit: </b>You do not suffer any penalties on attack rolls made with a shield while you are wielding another weapon. Add your shield's shield bonus to attacks and damage rolls made with the shield as if it was an enhancement bonus."
   groups:
     - Combat
-  name: Shield Master
   prereqs:
     base_attack_bonus: 11
     feats:
@@ -1594,17 +1600,17 @@
   summary: "No two-weapon penalties when attacking with a shield"
 
 -
+  name: Shield Proficiency
   _id: 6d9e
   description: "You are trained in how to properly use a shield. <p class=sub><b>Benefit: </b>When you use a shield (except a tower shield), the shield's armor check penalty only applies to Strength- and Dexterity-based skills. <p class=sub><b>Normal: </b>When you are using a shield with which you are not proficient, you take the shield's armor check penalty on attack rolls and on all skill checks that involve moving. <p class=sub><b>Special: </b>Barbarians, bards, clerics, druids, fighters, paladins, and rangers all automatically have Shield Proficiency as a bonus feat. They need not select it."
-  name: Shield Proficiency
   summary: "No penalties on attack rolls when using a shield"
 
 -
+  name: Shield Slam
   _id: 74c9
   description: "In the right position, your shield can be used to send opponents flying. <p class=sub><b>Prerequisites: </b>Improved Shield Bash, Shield Proficiency, Two-Weapon Fighting, base attack bonus +6. <p class=sub><b>Benefit: </b>Any opponents hit by your shield bash are also hit with a free bull rush attack, substituting your attack roll for the combat maneuver check (see Chapter 8). This bull rush does not provoke an attack of opportunity. Opponents who cannot move back due to a wall or other surface are knocked prone after moving the maximum possible distance. You may choose to move with your target if you are able to take a 5-foot step or to spend an action to move this turn."
   groups:
     - Combat
-  name: Shield Slam
   prereqs:
     base_attack_bonus: 6
     feats:
@@ -1613,12 +1619,12 @@
   summary: "Free bull rush with a bash attack"
 
 -
+  name: Shot on the Run
   _id: d4ba
   description: "You can move, fire a ranged weapon, and move again before your foes can react. <p class=sub><b>Prerequisites: </b>Dex 13, Dodge, Mobility, Point-Blank Shot, base attack bonus +4. <p class=sub><b>Benefit: </b>As a full-round action, you can move up to your speed and make a single ranged attack at any point during your movement. <p class=sub><b>Normal: </b>You cannot move before and after an attack with a ranged weapon."
   groups:
     - Combat
     - Archery Style 3
-  name: Shot on the Run
   prereqs:
     abilities:
       Dex: 13
@@ -1629,12 +1635,12 @@
   summary: "Make ranged attack at any point during movement"
 
 -
+  name: Sickening Critical
   _id: 8a4a
   description: "Your critical hits cause opponents to become sickened. <p class=sub><b>Prerequisites: </b>Critical Focus, base attack bonus +11 <p class=sub><b>Benefit: </b>Whenever you score a critical hit, your opponent becomes sickened for 1 minute. The effects of this feat do not stack. Additional hits instead add to the effect's duration. <p class=sub><b>Special: </b>You can only apply the effects of one critical feat to a given critical hit unless you possess Critical Mastery."
   groups:
     - Critical
     - Combat
-  name: Sickening Critical
   prereqs:
     base_attack_bonus: 11
     feats:
@@ -1642,14 +1648,15 @@
   summary: "Whenever you score a critical hit, the target is sickened"
 
 -
+  name: Silent Spell
   _id: 137d
   description: "You can cast your spells without making any sound. <p class=sub><b>Benefit: </b>A silent spell can be cast with no verbal components. Spells without verbal components are not affected. A silent spell uses up a spell slot one level higher than the spell's actual level. <p class=sub><b>Special: </b>Bard spells cannot be enhanced by this feat."
   groups:
     - Metamagic
-  name: Silent Spell
   summary: "Cast spell without verbal components"
 
 -
+  name: Simple Weapon Proficiency
   _id: 1c6b
   attack: "if(weapon.category == 'simple') { attacks.weapon_proficiency = 0; } return attacks;"
   classes:
@@ -1665,7 +1672,6 @@
     filter:
       category: simple
   description: "You are trained in the use of basic weapons. <p class=sub><b>Benefit: </b>You make attack rolls with simple weapons without penalty. <p class=sub><b>Normal: </b>When using a weapon with which you are not proficient, you take a -4 penalty on attack rolls. <p class=sub><b>Special: </b>All characters except for druids, monks, and wizards are automatically proficient with all simple weapons. They need not select this feat."
-  name: Simple Weapon Proficiency
   summary: "No penalty on attacks made with simple weapons"
 
 -
@@ -1962,7 +1968,6 @@
       - Simple Weapon Proficiency
       - Martial Weapon Proficiency
       - Exotic Weapon Proficiency
-    type: weapons
   name: Weapon Focus
   prereqs:
     base_attack_bonus: 1
@@ -1977,7 +1982,7 @@
   multi:
     feats:
       - Weapon Focus
-    type: weapons
+    char_filter: true
   name: Weapon Specialization
   prereqs:
     classes:

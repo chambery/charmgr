@@ -12,7 +12,8 @@
       - Good
       - Law
       - Plant
-  weapon: Longbow
+  weapon: 
+      - Longbow
 
 - name: Iomedae
   alignment: Lawful
@@ -28,7 +29,8 @@
       - Law
       - Sun
       - War
-  weapon: Longsword
+  weapon: 
+      - Longsword
 
 - name: Torag
   alignment: Lawful
@@ -43,7 +45,8 @@
     - Good
     - Law
     - Protection
-  weapon: Warhammer
+  weapon: 
+    - Warhammer
 
 - name: Sarenrae
   alignment: Neutral
@@ -59,7 +62,8 @@
     - Good
     - Healing
     - Sun
-  weapon: Scimitar
+  weapon: 
+    - Scimitar
 
 - name: Shelyn
   alignment: Neutral
@@ -75,7 +79,8 @@
     - Good
     - Luck
     - Protection
-  weapon: Glaive
+  weapon: 
+    - Glaive
 
 - name: Desna
   alignment: Chaotic
@@ -91,7 +96,8 @@
     - Liberation
     - Luck
     - Travel
-  weapon: Starknife
+  weapon: 
+    - Starknife
 
 - name: Cayden Cailean
   alignment: Chaotic
@@ -107,7 +113,8 @@
     - Good
     - Strength
     - Travel
-  weapon: Rapier
+  weapon: 
+    - Rapier
 
 - name: Abadar
   alignment: Lawful
@@ -123,7 +130,8 @@
     - Nobility
     - Protection
     - Travel
-  weapon: Light Crossbow
+  weapon: 
+    - Crossbow, light
 
 - name: Irori
   alignment: Lawful
@@ -138,7 +146,9 @@
     - Law
     - Rune
     - Strength
-  weapon: Unarmed Strike
+  weapon: 
+    - Strike, unarmed (Medium-size being)
+    - Strike, unarmed (Small being)
 
 - name: Gozreh
   alignment: Neutral
@@ -153,7 +163,8 @@
     - Plant
     - Water
     - Weather
-  weapon: Trident
+  weapon: 
+    - Trident
 
 - name: Pharasma
   alignment: Neutral
@@ -169,7 +180,8 @@
     - Knowledge
     - Repose
     - Water
-  weapon: Dagger
+  weapon: 
+    - Dagger
 
 - name: Nethys
   alignment: Neutral
@@ -182,7 +194,8 @@
     - Magic
     - Protection
     - Rune
-  weapon: Quarterstaff
+  weapon: 
+    - Quarterstaff
 
 - name: Gorum
   alignment: Chaotic
@@ -197,7 +210,8 @@
     - Glory
     - Strength
     - War
-  weapon: Greatsword
+  weapon: 
+    - Greatsword
 
 - name: Calistria
   alignment: Chaotic
@@ -212,7 +226,8 @@
     - Knowledge
     - Luck
     - Trickery
-  weapon: Whip
+  weapon: 
+    - Whip
 
 - name: Asmodeus
   alignment: Lawful
@@ -228,7 +243,9 @@
     - Law
     - Magic
     - Trickery
-  weapon: Mace
+  weapon: 
+    - Mace, light
+    - Mace, heavy
 
 - name: Zon-Kuthon
   alignment: Lawful
@@ -244,7 +261,8 @@
     - Destruction
     - Evil
     - Law
-  weapon: Spiked Chain
+  weapon: 
+    - Chain, spiked
 
 - name: Urgathoa
   alignment: Neutral
@@ -259,7 +277,8 @@
     - Magic
     - Strength
     - War
-  weapon: Scythe
+  weapon: 
+    - Scythe
 
 - name: Norgorber
   alignment: Neutral
@@ -275,7 +294,8 @@
     - Evil
     - Knowledge
     - Trickery
-  weapon: Short Sword
+  weapon: 
+    - Sword, short
 
 - name: Lamashtu
   alignment: Chaotic
@@ -290,7 +310,8 @@
     - Madness
     - Strength
     - Trickery
-  weapon: Falchion
+  weapon: 
+    - Falchion
 
 - name: Rovagug
   alignment: Chaotic
@@ -305,5 +326,6 @@
     - Evil
     - War
     - Weather
-  weapon: Greataxe
+  weapon: 
+    - Greataxe
 

@@ -1,5 +1,40 @@
 part of resource;
 
+class RelatedData
+{
+  String classname;
+  List data = [];
+  RelatedData(map)
+  {
+//    print('building related_data');
+    MirrorSystem mirrors = currentMirrorSystem();
+    LibraryMirror lm = mirrors.findLibrary(new Symbol('resource'));
+    print('\ttype: ${map['type']}');
+    classname = map['type'];
+    var type = lm.declarations[new Symbol(map['type'])];
+    var resources = type.invoke(new Symbol('get'), []).reflectee;
+    for(var resource in resources.values)
+    {
+//      print('\t${resource}:');
+      ObjectMirror o = reflect(resource);
+      for(var key in map['filter'].keys)
+      {
+//        print('\t\tfiltering on ${key}');
+        /* category : simple */
+        var filterField = o.getField(new Symbol(key));
+        if(filterField != null)
+        {
+          var instFilterValue = filterField.reflectee;
+//          print('\t\t${instFilterValue} ?? ${map['filter'][key]}');
+          if(map['filter'][key] == instFilterValue) data.add(resource);
+        }
+      }
+    }
+  }
+
+
+}
+
 class Feat extends Resource
 {
   static final Symbol MapPrereq = new Symbol('MapPrereq');
@@ -65,13 +100,11 @@ class Feat extends Resource
   set groups(List groups)
   {
     _groups = groups;
-    print('\tbefore ${groupToFeats}');
     for(var group in groups)
     {
       if(groupToFeats[group] == null) groupToFeats[group] = [];
       groupToFeats[group].add(this);
     }
-    print('\tafter ${groupToFeats}');
   }
 
   get classes => _classes;
@@ -96,7 +129,7 @@ class Feat extends Resource
   get related_data => _relatedData;
   set related_data(map)
   {
-    print('\t\trelated_data: ${map}');
+    print('\t\t[${name}] related_data: ${map}');
     _relatedData = new RelatedData(map);
 
   }
@@ -139,6 +172,45 @@ class Feat extends Resource
     }
     return true;
   }
+}
+
+class MultiSelectFeat extends Feat
+{
+  /* if the related_data should be filtered to include only the intersection
+   * of comparable Character data.  eg. */
+  bool char_filter;
+  Map _multi = {};
+
+  MultiSelectFeat.map(map) : super.map(map);
+
+  MultiSelectFeat(name, description) : super(name, description);
+
+  get multi => _multi;
+  set multi(Map multi)
+  {
+    // TODO - UGLY
+    if(multi['char_filter'] != null)
+    {
+      char_filter = multi['char_filter'];
+      multi.remove('char_filter');
+    }
+
+    print('initializing multi [${name}]');
+    for(var typename in multi.keys)
+    {
+      print('\tpopulating ${multi[typename]}');
+      var type = lm.declarations[translations[typename]];
+      for(var item in multi[typename])
+      {
+        print('\t\tfound ${item}');
+        var resource = type.invoke(new Symbol('get'), [item]).reflectee;
+        if(_multi[typename] == null) _multi[typename] = [];
+        _multi[typename].add(resource);
+      }
+    }
+  }
+
+
 }
 
 abstract class Prereq
@@ -292,7 +364,7 @@ class ListPrereq extends Prereq
 //    var meets = or; // false, say
     var meets = !or;
     ObjectMirror o = reflect(char);
-    List list= o.getField(new Symbol(name)).reflectee;
+    Iterable list = o.getField(new Symbol(name)).reflectee;
     for(var prereq in prereqs)
     {
       if(or)
@@ -352,7 +424,7 @@ class PickPrereq extends Prereq
 }
 
 /**
- * Key:value. Includes level
+ * key:value. Includes level
  */
 class SimplePrereq extends Prereq
 {
@@ -360,6 +432,11 @@ class SimplePrereq extends Prereq
   SimplePrereq(name, value, [type]) : super(name, value)
   {
     prereqs = value;
+    /* base_attack_bonus is a list, hack to accomodate */
+    if(value is List)
+    {
+      prereqs = value.reduce(max);
+    }
   }
   
   bool meets(char) 
@@ -368,9 +445,10 @@ class SimplePrereq extends Prereq
     ObjectMirror o = reflect(char);
     print('SimplePrereq ${name} ${prereqs}');
     var value = o.getField(new Symbol(name)).reflectee;
+    /* base_attack_bonus is a list, hack to accomodate, not-so-simple */
     if(value is List)
     {
-      value= value.first;
+      value = value.reduce(max);
     }
     print('${name} ${value} : ${prereqs}');
     return value >= prereqs;

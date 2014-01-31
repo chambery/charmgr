@@ -2,6 +2,7 @@ library resource;
 
 import 'character.dart';
 import 'dart:mirrors';
+import 'dart:math';
 
 part 'feat.dart';
 part 'ability.dart';
@@ -15,30 +16,6 @@ Map translations = {
  'alignment' : new Symbol('Alignment'),
  'goodness' : new Symbol('Goodness')
 };
-
-class RelatedData
-{
-  ClassMirror type;
-  var filter = {};
-
-  RelatedData(map)
-  {
-    MirrorSystem mirrors = currentMirrorSystem();
-    LibraryMirror lm = mirrors.findLibrary(new Symbol('resource'));
-    type = lm.declarations[new Symbol(map['type'])];
-//    print('\t\trelated_data: ${this.type.reflectedType}');
-
-//    for(var key in map['filter'].keys)
-//    {
-      // TODO - create a filter mechanism to use reflection to pick instances from the global hash whose fields match criteria
-      /* Weapon.category == 'martial' */
-      filter = map['filter'];
-//      filter[type.getField(new Symbol(key))] = map['filter'][key];
-//    }
-  }
-
-
-}
 
 abstract class Resource
 {
@@ -317,10 +294,45 @@ class Weapon extends Resource
 
   }
 
-
-  static Weapon get(name)
+  static get([name, filter])
   {
-    return _weapons[name];
+    // TODO - factor this mess out, should be in Resource except for the static
+    if(name != null)
+    {
+      if(filter == null) filter = {};
+      filter['name'] = name;
+    }
+
+    if(filter != null)
+    {
+      var result = [];
+      for(var weapon in _weapons.values)
+      {
+        bool match = true;
+        ObjectMirror m = reflect(weapon);
+        ClassMirror c = reflectClass(weapon.runtimeType);
+        // TODO - factor this mess out
+        for(var field in filter.keys)
+        {
+          var fieldSym = new Symbol(field);
+//          print('\t\tm.getField(fieldSym) == ${m.getField(fieldSym)}');
+          if(m.getField(fieldSym) != null && m.getField(fieldSym).reflectee != filter[field])
+          {
+            match = false;
+            break;
+          }
+        }
+        if(match)
+        {
+          result.add(weapon);
+        }
+      }
+
+//      print('${result}');
+      return name != null ? result[0] : result;
+    }
+
+    return _weapons;
   }
 
   _getDb()
@@ -336,7 +348,7 @@ class Deity extends Resource
   Goodness _goodness;
   var portfolio = [];
   var domains = [];
-  Weapon _weapon;
+  List<Weapon> _weapon = [];
 
   Deity.map(map) : super.map(map);
 
@@ -360,10 +372,14 @@ class Deity extends Resource
   }
 
   get weapon => _weapon;
-
-  set weapon(weapon)
+  set weapon(weapons)
   {
-    _weapon = Weapon.get(weapon);
+    for(var weapon in weapons)
+    {
+//      print('\tDeity setWeapon: ${weapon}');
+      _weapon.add(Weapon.get(weapon));
+      
+    }
   }
 
   _getDb()

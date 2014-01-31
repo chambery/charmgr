@@ -88,13 +88,22 @@ Map load()
 	  new Domain.map(domain);
   }
 
+  /* preload Feat refs before we can fully inflate them */
   print('loading feats.yaml');
   file = new File('../src/resources/feats.yaml');
   List feats = loadYaml(file.readAsStringSync());
   /* have to create the feats so we can ref them from the prereqs */
   for(var feat in feats)
   {
-    Feat f = new Feat(feat['name'], feat['description']);
+    Feat f;
+    if(feat['multi'] == null)
+    {
+      f = new Feat(feat['name'], feat['description']);
+    }
+    else
+    {
+      f = new MultiSelectFeat(feat['name'], feat['description']);
+    }
 	  Feat.put(f);
   }
 

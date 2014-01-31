@@ -40,7 +40,6 @@
   range: '-'
   weight: 15
   damageType: [piercing]
-  type: weapon
 
 - id: 4
   name: Club
@@ -51,7 +50,6 @@
   range: 10 ft.
   weight: 3
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 5
   name: Crossbow, hand
@@ -84,7 +82,6 @@
   range: 80 ft.
   weight: 6
   damageType: [piercing]
-  type: weapon
 
 - id: 8
   name: Crossbow, repeating
@@ -95,7 +92,6 @@
   range: 80 ft.
   weight: 16
   damageType: [piercing]
-  type: weapon
 
 - id: 9
   name: Dagger
@@ -106,7 +102,6 @@
   range: 10 ft.
   weight: 1
   damageType: [piercing]
-  type: weapon
 
 - id: 10
   name: Dagger, punching
@@ -117,7 +112,6 @@
   range: '-'
   weight: 2
   damageType: [piercing]
-  type: weapon
 
 - id: 11
   name: Dart
@@ -128,7 +122,6 @@
   range: 20 ft.
   weight: .5
   damageType: [piercing]
-  type: weapon
 
 - id: 12
   name: Falchion
@@ -139,7 +132,6 @@
   range: '-'
   weight: 16
   damageType: [slashing]
-  type: weapon
 
 - id: 13
   name: Flail, dire
@@ -150,7 +142,6 @@
   range: '-'
   weight: 20
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 14
   name: Flail, heavy
@@ -161,7 +152,6 @@
   range: '-'
   weight: 20
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 15
   name: Flail, light
@@ -172,7 +162,6 @@
   range: '-'
   weight: 5
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 16
   name: Gauntlet
@@ -183,7 +172,6 @@
   range: '-'
   weight: 2
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 17
   name: Gauntlet, spiked
@@ -194,7 +182,6 @@
   range: '-'
   weight: 2
   damageType: [piercing]
-  type: weapon
 
 - id: 18
   name: Glaive
@@ -205,7 +192,6 @@
   range: '-'
   weight: 15
   damageType: [slashing]
-  type: weapon
 
 - id: 19
   name: Greataxe
@@ -216,7 +202,6 @@
   range: '-'
   weight: 20
   damageType: [slashing]
-  type: weapon
 
 - id: 20
   name: Greatclub
@@ -227,7 +212,6 @@
   range: '-'
   weight: 10
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 21
   name: Greatsword
@@ -238,7 +222,6 @@
   range: '-'
   weight: 15
   damageType: [slashing]
-  type: weapon
 
 - id: 22
   name: Guisarme
@@ -249,7 +232,6 @@
   range: '-'
   weight: 15
   damageType: [slashing]
-  type: weapon
 
 - id: 23
   name: Halberd
@@ -260,7 +242,6 @@
   range: '-'
   weight: 15
   damageType: [piercing, slashing]
-  type: weapon
 
 - id: 24
   name: Halfspear
@@ -271,7 +252,6 @@
   range: 20 ft.
   weight: 3
   damageType: [piercing]
-  type: weapon
 
 - id: 25
   name: Hammer, gnome hooked
@@ -282,7 +262,6 @@
   range: '-'
   weight: 6
   damageType: [bludgeoning, piercing]
-  type: weapon
 
 - id: 26
   name: Hammer, light
@@ -293,7 +272,6 @@
   range: 20 ft.
   weight: 2
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 27
   name: Handaxe
@@ -304,7 +282,6 @@
   range: '-'
   weight: 5
   damageType: [slashing]
-  type: weapon
 
 - id: 28
   name: Javelin
@@ -315,7 +292,6 @@
   range: 30 ft.
   weight: 2
   damageType: [piercing]
-  type: weapon
 
 - id: 29
   name: Kama
@@ -326,7 +302,6 @@
   range: '-'
   weight: 2
   damageType: [slashing]
-  type: weapon
 
 - id: 30
   name: Kama, halfling
@@ -337,7 +312,6 @@
   range: '-'
   weight: 1
   damageType: [slashing]
-  type: weapon
 
 - id: 31
   name: Kukri
@@ -348,7 +322,6 @@
   range: '-'
   weight: 3
   damageType: [slashing]
-  type: weapon
 
 - id: 32
   name: Lance, heavy
@@ -359,7 +332,6 @@
   range: '-'
   weight: 10
   damageType: [piercing]
-  type: weapon
 
 - id: 33
   name: Lance, light
@@ -370,7 +342,6 @@
   range: '-'
   weight: 5
   damageType: [piercing]
-  type: weapon
 
 - id: 34
   name: Longbow
@@ -381,7 +352,6 @@
   range: 100 ft.
   weight: 3
   damageType: [piercing]
-  type: weapon
 
 - id: 35
   name: Longbow, composite
@@ -392,7 +362,6 @@
   range: 110 ft.
   weight: 3
   damageType: [piercing]
-  type: weapon
 
 - id: 36
   name: Longspear
@@ -403,7 +372,6 @@
   range: '-'
   weight: 9
   damageType: [piercing]
-  type: weapon
 
 - id: 37
   name: Longsword
@@ -414,7 +382,6 @@
   range: '-'
   weight: 4
   damageType: [slashing]
-  type: weapon
 
 - id: 38
   name: Mace, heavy
@@ -425,7 +392,6 @@
   range: '-'
   weight: 12
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 39
   name: Mace, light
@@ -436,7 +402,6 @@
   range: '-'
   weight: 6
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 40
   name: Morningstar
@@ -447,7 +412,6 @@
   range: '-'
   weight: 8
   damageType: [bludgeoning, piercing]
-  type: weapon
 
 - id: 41
   name: Net
@@ -458,7 +422,6 @@
   range: 10 ft.
   weight: 10
   damageType: ['-']
-  type: weapon
 
 - id: 42
   name: Nunchaku
@@ -469,7 +432,6 @@
   range: '-'
   weight: 2
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 43
   name: Nunchaku, halfling
@@ -480,7 +442,6 @@
   range: '-'
   weight: 1
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 44
   name: Pick, heavy
@@ -491,7 +452,6 @@
   range: '-'
   weight: 6
   damageType: [piercing]
-  type: weapon
 
 - id: 45
   name: Pick, light
@@ -502,7 +462,6 @@
   range: '-'
   weight: 4
   damageType: [piercing]
-  type: weapon
 
 - id: 46
   name: Quarterstaff
@@ -513,7 +472,6 @@
   range: '-'
   weight: 4
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 47
   name: Ranseur
@@ -524,7 +482,6 @@
   range: '-'
   weight: 15
   damageType: [piercing]
-  type: weapon
 
 - id: 48
   name: Rapier
@@ -535,7 +492,6 @@
   range: '-'
   weight: 3
   damageType: [piercing]
-  type: weapon
 
 - id: 49
   name: Sap
@@ -546,7 +502,6 @@
   range: '-'
   weight: 3
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 50
   name: Scimitar
@@ -557,7 +512,6 @@
   range: '-'
   weight: 4
   damageType: [slashing]
-  type: weapon
 
 - id: 51
   name: Scythe
@@ -568,7 +522,6 @@
   range: '-'
   weight: 12
   damageType: [piercing, slashing]
-  type: weapon
 
 - id: 52
   name: Shortbow
@@ -579,7 +532,6 @@
   range: 60 ft.
   weight: 2
   damageType: [piercing]
-  type: weapon
 
 - id: 53
   name: Shortbow, composite
@@ -590,7 +542,6 @@
   range: 70 ft.
   weight: 2
   damageType: [piercing]
-  type: weapon
 
 - id: 54
   name: Shortspear
@@ -601,7 +552,6 @@
   range: 20 ft.
   weight: 5
   damageType: [piercing]
-  type: weapon
 
 - id: 55
   name: Shuriken
@@ -612,7 +562,6 @@
   range: 10 ft.
   weight: 1/10
   damageType: [piercing]
-  type: weapon
 
 - id: 56
   name: Siangham
@@ -623,7 +572,6 @@
   range: '-'
   weight: 1
   damageType: [piercing]
-  type: weapon
 
 - id: 57
   name: Siangham, halfling
@@ -634,7 +582,6 @@
   range: '-'
   weight: 1
   damageType: [piercing]
-  type: weapon
 
 - id: 58
   name: Sickle
@@ -645,7 +592,6 @@
   range: '-'
   weight: 3
   damageType: [slashing]
-  type: weapon
 
 - id: 59
   name: Sling
@@ -656,7 +602,17 @@
   range: 50 ft.
   weight: 0
   damageType: [bludgeoning]
-  type: weapon
+
+-
+  id: 100
+  name: Starknife
+  category: martial
+  usage: light
+  damage: 1d4 
+  critical: x3
+  range: 20 ft.
+  weight: 3 lbs.
+  damageType: [piercing]
 
 - id: 60
   name: Strike, unarmed (Medium-size being)
@@ -667,7 +623,6 @@
   range: '-'
   weight: '-'
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 61
   name: Strike, unarmed (Small being)
@@ -678,7 +633,6 @@
   range: '-'
   weight: '-'
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 62
   name: Sword, bastard
@@ -689,7 +643,6 @@
   range: '-'
   weight: 10
   damageType: [slashing]
-  type: weapon
 
 - id: 63
   name: Sword, short
@@ -700,7 +653,6 @@
   range: '-'
   weight: 3
   damageType: [piercing]
-  type: weapon
 
 - id: 64
   name: Sword, two-bladed
@@ -711,7 +663,6 @@
   range: '-'
   weight: 15
   damageType: [slashing]
-  type: weapon
 
 - id: 65
   name: Trident
@@ -722,7 +673,6 @@
   range: 10 ft.
   weight: 5
   damageType: [piercing]
-  type: weapon
 
 - id: 66
   name: Urgrosh, dwarven
@@ -733,7 +683,6 @@
   range: '-'
   weight: 15
   damageType: [slashing, piercing]
-  type: weapon
 
 - id: 67
   name: Waraxe, dwarven
@@ -744,7 +693,6 @@
   range: '-'
   weight: 15
   damageType: [slashing]
-  type: weapon
 
 - id: 68
   name: Warhammer
@@ -755,7 +703,6 @@
   range: '-'
   weight: 8
   damageType: [bludgeoning]
-  type: weapon
 
 - id: 69
   name: Whip
@@ -766,4 +713,3 @@
   range: 15 ft.
   weight: 2
   damageType: [slashing]
-  type: weapon
